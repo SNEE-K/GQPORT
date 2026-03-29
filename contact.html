@@ -125,7 +125,7 @@
 
   <!-- FORM -->
   <!-- To activate: sign up at formspree.io, create a form, and replace YOUR_FORM_ID below -->
-  <form class="cp-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST" id="contact-form">
+  <form class="cp-form" action="https://formspree.io/f/xnjopjzn" method="POST" id="contact-form">
     <div class="cp-field">
       <label for="name">Name</label>
       <input type="text" id="name" name="name" placeholder="Your name" required>
@@ -226,6 +226,7 @@ form.addEventListener('submit', function(e) {
   function resize() {
     W = canvas.width  = window.innerWidth;
     H = canvas.height = window.innerHeight;
+    ctx.font = 'bold 13px "DM Mono", monospace';
   }
 
   function rand(min, max) { return min + Math.random() * (max - min); }
@@ -253,7 +254,6 @@ form.addEventListener('submit', function(e) {
 
   function tick() {
     ctx.clearRect(0, 0, W, H);
-    ctx.font = 'bold 13px "DM Mono", monospace';
     for (var i = 0; i < particles.length; i++) {
       var p = particles[i];
       p.life++;
