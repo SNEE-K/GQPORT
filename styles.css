@@ -72,6 +72,7 @@ nav.scrolled{background:rgba(8,8,8,.7);backdrop-filter:blur(10px);-webkit-backdr
 .work-tab.active{color:var(--bg);background:var(--accent);border-color:var(--accent)}
 .work-list{border-top:1px solid var(--border);margin-top:16px}
 .work-row.hidden{display:none}
+.work-list.hidden{display:none}
 .tab-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin-top:16px;padding-top:16px;border-top:1px solid var(--border)}
 .tab-gallery.hidden{display:none}
 .tg-item{width:100%;aspect-ratio:16/9;object-fit:cover;border-radius:4px;display:block}
