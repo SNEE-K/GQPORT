@@ -140,6 +140,12 @@
       <img class="tg-item" src="assets/images/social/ryan-garcia-mario-barrios.jpg" alt="" loading="lazy">
       <img class="tg-item" src="assets/images/social/toolup-1.png" alt="" loading="lazy">
       <img class="tg-item" src="assets/images/social/UNLV_social.png" alt="" loading="lazy">
+      <img class="tg-item" src="assets/images/social/BFC 4.png" alt="" loading="lazy">
+      <img class="tg-item" src="assets/images/social/female_shred_innosup.png" alt="" loading="lazy">
+      <img class="tg-item" src="assets/images/social/TUP-Free-20V-Battery-with-Select-Tools.jpg" alt="" loading="lazy">
+      <img class="tg-item" src="aassets/images/social/innospresso_9-16.png" alt="" loading="lazy">
+      <img class="tg-item" src="assets/images/social/TUP-TURKEY DAY.jpg" alt="" loading="lazy">
+     
     </div>
 
   </section>
@@ -806,6 +812,27 @@ window.addEventListener('scroll', function() {
   resize();
   tick();
 })();
+
+/* ── LIGHTBOX ── */
+(function() {
+  var lb = document.getElementById('lightbox');
+  var lbImg = lb.querySelector('.lb-img');
+  document.getElementById('social-gallery').addEventListener('click', function(e) {
+    if (e.target.tagName === 'IMG') {
+      lbImg.src = e.target.src;
+      lb.classList.remove('hidden');
+    }
+  });
+  lb.querySelector('.lb-backdrop').addEventListener('click', function() { lb.classList.add('hidden'); });
+  lb.querySelector('.lb-close').addEventListener('click', function() { lb.classList.add('hidden'); });
+  document.addEventListener('keydown', function(e) { if (e.key === 'Escape') lb.classList.add('hidden'); });
+})();
 </script>
+
+<div id="lightbox" class="lightbox hidden">
+  <div class="lb-backdrop"></div>
+  <button class="lb-close">&#x2715;</button>
+  <img class="lb-img" src="" alt="">
+</div>
 </body>
 </html>
