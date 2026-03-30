@@ -126,6 +126,22 @@
         <div class="w-year">2024</div>
       </div>
     </div>
+
+    <!-- MOTION GALLERY -->
+    <div id="motion-gallery" class="tab-gallery hidden">
+      <video class="tg-item" src="assets/video/blackmvss_Showcase.mp4" autoplay muted loop playsinline></video>
+      <video class="tg-item" src="assets/video/Distorted-Logo-Practitioner.mp4" autoplay muted loop playsinline></video>
+      <video class="tg-item" src="assets/video/ryanxmario_landscape.mp4" autoplay muted loop playsinline></video>
+      <video class="tg-item" src="assets/video/0e-widgets-motion.mp4" autoplay muted loop playsinline></video>
+    </div>
+
+    <!-- SOCIAL GALLERY -->
+    <div id="social-gallery" class="tab-gallery hidden">
+      <img class="tg-item" src="assets/images/social/ryan-garcia-mario-barrios.jpg" alt="" loading="lazy">
+      <img class="tg-item" src="assets/images/social/toolup-1.png" alt="" loading="lazy">
+      <img class="tg-item" src="assets/images/social/UNLV_social.png" alt="" loading="lazy">
+    </div>
+
   </section>
 
   <section id="about">
@@ -371,6 +387,11 @@ document.getElementById('cs-back').addEventListener('click', goBack);
 
 /* ── WORK TABS ── */
 var worksCount = document.getElementById('works-count');
+var workList = document.querySelector('.work-list');
+var motionGallery = document.getElementById('motion-gallery');
+var socialGallery = document.getElementById('social-gallery');
+var galleryFilters = ['motion', 'social'];
+
 function updateWorksCount(filter) {
   var count = 0;
   document.querySelectorAll('.work-row').forEach(function(row) {
@@ -378,19 +399,36 @@ function updateWorksCount(filter) {
   });
   worksCount.textContent = '[ ' + count + ' Project' + (count !== 1 ? 's' : '') + ' — 2020 / 2025 ]';
 }
+
 document.querySelectorAll('.work-tab').forEach(function(tab) {
   tab.addEventListener('click', function() {
     document.querySelectorAll('.work-tab').forEach(function(t) { t.classList.remove('active'); });
     tab.classList.add('active');
     var filter = tab.dataset.filter;
-    document.querySelectorAll('.work-row').forEach(function(row) {
-      if (filter === 'all' || (row.dataset.cat && row.dataset.cat.split(' ').indexOf(filter) !== -1)) {
-        row.classList.remove('hidden');
-      } else {
-        row.classList.add('hidden');
-      }
-    });
-    updateWorksCount(filter);
+
+    if (galleryFilters.indexOf(filter) !== -1) {
+      // gallery mode — hide work list, hide count, show correct gallery
+      workList.classList.add('hidden');
+      worksCount.style.visibility = 'hidden';
+      motionGallery.classList.add('hidden');
+      socialGallery.classList.add('hidden');
+      if (filter === 'motion') motionGallery.classList.remove('hidden');
+      if (filter === 'social') socialGallery.classList.remove('hidden');
+    } else {
+      // list mode — show work list, filter rows, update count
+      workList.classList.remove('hidden');
+      worksCount.style.visibility = 'visible';
+      motionGallery.classList.add('hidden');
+      socialGallery.classList.add('hidden');
+      document.querySelectorAll('.work-row').forEach(function(row) {
+        if (filter === 'all' || (row.dataset.cat && row.dataset.cat.split(' ').indexOf(filter) !== -1)) {
+          row.classList.remove('hidden');
+        } else {
+          row.classList.add('hidden');
+        }
+      });
+      updateWorksCount(filter);
+    }
   });
 });
 
