@@ -133,6 +133,7 @@
       <video class="tg-item" src="assets/video/Distorted-Logo-Practitioner.mp4" autoplay muted loop playsinline></video>
       <video class="tg-item" src="assets/video/ryanxmario_landscape.mp4" autoplay muted loop playsinline></video>
       <video class="tg-item" src="assets/video/0e-widgets-motion.mp4" autoplay muted loop playsinline></video>
+      <video class="tg-item" src="assets/video/fatBurger.mp4" autoplay muted loop playsinline></video>
     </div>
 
     <!-- SOCIAL GALLERY -->
@@ -581,14 +582,15 @@ var CS = {
     next:'real-estate',nextT:'PETROSIAN REAL ESTATE'
   },
   'real-estate':{
-    cat:'Pitch Deck / Print / Agent Branding',title:'PETROSIAN\nREAL ESTATE',
-    meta:[{l:'Role',v:'Graphic Designer / Deck Designer'},{l:'Client',v:'The Petrosian Team / Realty ONE Group'},{l:'Year',v:'2025'},{l:'Scope',v:'Recruiting Deck, Vendor Directory, Agent Pitch Deck'}],
+    cat:'Web Design / Pitch Deck / Print / Agent Branding',title:'PETROSIAN\nREAL ESTATE',
+    meta:[{l:'Role',v:'Web Designer / Graphic Designer'},{l:'Client',v:'The Petrosian Team / Realty ONE Group'},{l:'Year',v:'2025'},{l:'Website',v:'luxurylistingsnv.com'},{l:'Scope',v:'Website, Recruiting Deck, Vendor Directory, Agent Pitch Deck'}],
     hero:'assets/images/real-estate/petrosian-cover.png',
-    intro:["Three distinct deliverables for the Petrosian Real Estate Group ecosystem: a full agent recruiting pitch deck, a vetted vendor directory, and a personal luxury pitch deck for top-producing agent Daniela Baum.","Each piece had to hold its own on a desktop, in a PDF, and in person — with a unified black and gold design language across all three."],
-    tags:['Agent Recruiting Deck (22pp)','Vendor Directory','Personal Agent Pitch Deck','DB Monogram Identity','Sign Panel Mockup'],
-    body:["The recruiting package is the flagship — 22 pages designed to convert real estate agents. Cinematic cover, Nathan Petrosian bio, team photos, Realty ONE Group positioning, benefits table, agent branding examples, tech stack, and a five-step onboarding flow. Every section designed to overcome a specific objection a prospective agent would have.","The vendor list is branded post-close collateral. Black/gold treatment, alphabetical service categories, stock photography that doesn't look like stock.","The Daniela Baum pitch deck is a personal brand within the team brand — white/pearl background, gold foil aesthetic, her db monogram, $200M in 2025 sales volume front and center. Designed to present on-screen and leave behind in print."],
+    intro:["A full suite of design work for Nathan Petrosian and the Petrosian Real Estate Group — spanning the digital and the physical. The engagement started with the website at luxurylistingsnv.com and expanded into a complete print and presentation system for the team's agent recruitment and client-facing operations.","Every piece — from the homepage to the pitch decks — runs on the same black and gold visual language, built to signal exactly what the brand is: luxury, precision, and authority in the Las Vegas market."],
+    tags:['Website Design — luxurylistingsnv.com','Agent Recruiting Deck (22pp)','Vendor Directory','Personal Agent Pitch Deck','DB Monogram Identity','Sign Panel Mockup'],
+    body:["The website was the foundation. luxurylistingsnv.com was designed to position Nathan Petrosian as the go-to luxury real estate agent in Las Vegas — cinematic full-bleed photography, clean typography, a listings integration that doesn't look like a database, and a contact experience that feels high-end rather than transactional. The video walkthrough below shows the full site as designed.","The recruiting package expanded the brand into print — 22 pages designed to convert real estate agents. Cinematic cover, Nathan Petrosian bio, team photos, Realty ONE Group positioning, benefits table, agent branding examples, tech stack, and a five-step onboarding flow. Every section built to overcome a specific objection a prospective agent would have.","The vendor list is branded post-close collateral. Black/gold treatment, alphabetical service categories, stock photography that doesn't look like stock.","The Daniela Baum pitch deck is a personal brand within the team brand — white/pearl background, gold foil aesthetic, her db monogram, $200M in 2025 sales volume front and center. Designed to present on-screen and leave behind in print."],
     galleries:[{c:'g2',imgs:['assets/images/real-estate/petrosian-cover.png','assets/images/real-estate/petrosian-team.png']},{c:'g3',imgs:['assets/images/real-estate/petrosian-branding.png','assets/images/real-estate/vendor-list-cover.png','assets/images/real-estate/vendor-list-spread.png']},{c:'g3',imgs:['assets/images/real-estate/daniela-baum-cover.png','assets/images/real-estate/daniela-baum-stat.png','assets/images/real-estate/daniela-baum-sold.png']}],
-    impact:'All three deliverables in active use across Petrosian Team agent recruitment and client-facing presentations.',
+    video:'assets/video/luxurylistings-walkthrough.mov',
+    impact:'Website live at luxurylistingsnv.com. All print deliverables in active use across Petrosian Team agent recruitment and client-facing presentations.',
     next:'tix4branding',nextT:'TIX4 BRANDING'
   },
   'tix4branding':{
@@ -637,7 +639,8 @@ function openCase(id) {
     gH += '<div class="cs-gal '+g.c+'"'+(g.style?' style="'+g.style+'"':'')+'>'+imgs+'</div>';
   });
 
-  var vH = d.video ? '<div class="cs-video cs-sect"><div class="cs-sect-h">IN MOTION</div><video controls loop muted playsinline><source src="'+d.video+'" type="video/mp4"></video></div>' : '';
+  var vMime = d.video ? (d.video.endsWith('.mov') ? 'video/quicktime' : 'video/mp4') : '';
+  var vH = d.video ? '<div class="cs-video cs-sect"><div class="cs-sect-h">IN MOTION</div><video controls loop muted playsinline><source src="'+d.video+'" type="'+vMime+'"></video></div>' : '';
   var iH = d.intro.map(function(p){ return '<p>'+p+'</p>'; }).join('');
   var bH = d.body.map(function(p){ return '<p>'+p+'</p>'; }).join('');
   var titleH = d.title.split('\n').join('<br>');
