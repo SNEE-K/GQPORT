@@ -80,6 +80,7 @@ nav.scrolled{background:rgba(8,8,8,.7);backdrop-filter:blur(10px);-webkit-backdr
 @media(max-width:600px){.tab-gallery{grid-template-columns:1fr}}
 /* social gallery — columns masonry, tight 5px gap */
 #social-gallery{display:block;columns:3;column-gap:5px}
+#social-gallery.hidden{display:none}
 #social-gallery .tg-item{width:100%;display:block;margin-bottom:5px;break-inside:avoid;border-radius:3px;cursor:none;transition:opacity .2s}
 #social-gallery .tg-item:hover{opacity:.85}
 @media(max-width:700px){#social-gallery{columns:2}}
