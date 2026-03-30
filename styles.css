@@ -76,7 +76,7 @@ nav.scrolled{background:rgba(8,8,8,.7);backdrop-filter:blur(10px);-webkit-backdr
 .tab-gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:12px;margin-top:16px;padding-top:16px;border-top:1px solid var(--border);align-items:start}
 .tab-gallery.hidden{display:none}
 .tg-item{width:100%;height:auto;display:block;border-radius:4px}
-.tab-gallery video.tg-item{aspect-ratio:16/9;object-fit:cover}
+.tab-gallery video.tg-item{object-fit:cover}
 @media(max-width:600px){.tab-gallery{grid-template-columns:1fr}}
 /* social gallery — columns masonry, tight 5px gap */
 #social-gallery{display:block;columns:3;column-gap:5px}
