@@ -21,7 +21,7 @@
   <div class="nav-links">
     <a class="nav-link" id="nav-work" href="#works">Work</a>
     <a class="nav-link" id="nav-about" href="#about">About</a>
-    <a class="nav-link" href="contact.html">Contact</a>
+    <a class="c-btn-nav" href="contact.html">Start a Conversation</a>
     <a class="nav-link" href="mailto:grayquickart@gmail.com"><span class="nav-dot"></span>Available</a>
   </div>
 </nav>
@@ -54,60 +54,68 @@
   <section id="works">
     <div class="works-head">
       <div class="works-label">Selected Work</div>
-      <div class="works-count">[ 10 Projects — 2020 / 2025 ]</div>
+      <div class="works-count" id="works-count">[ 11 Projects — 2020 / 2025 ]</div>
+    </div>
+    <div class="work-tabs">
+      <button class="work-tab active" data-filter="all">All</button>
+      <button class="work-tab" data-filter="branding">Branding</button>
+      <button class="work-tab" data-filter="ux-ui">UX / UI</button>
+      <button class="work-tab" data-filter="graphic">Graphic Work</button>
+      <button class="work-tab" data-filter="motion">Motion</button>
+      <button class="work-tab" data-filter="social">Social Media</button>
     </div>
     <div class="work-list">
-      <div class="work-row" data-case="tix4" data-img="assets/images/ux-ui/tix4_ticket_sales.png">
+      <div class="work-row" data-case="tix4" data-cat="graphic" data-img="assets/images/ux-ui/tix4_ticket_sales.png">
         <div class="w-num">01</div><div class="w-title">TIX4 CAMPAIGNS</div>
         <div class="w-tags"><span class="w-tag">Campaign Design</span><span class="w-tag">Art Direction</span></div>
         <div class="w-year">2023–2025</div>
       </div>
-      <div class="work-row" data-case="blackmvss" data-img="assets/images/branding/blackmvss/blackmvss-mockup-1.png">
+      <div class="work-row" data-case="blackmvss" data-cat="branding" data-img="assets/images/branding/blackmvss/blackmvss-mockup-1.png">
         <div class="w-num">02</div><div class="w-title">BLACK MVSS</div>
         <div class="w-tags"><span class="w-tag">Brand Identity</span><span class="w-tag">Apparel</span></div>
         <div class="w-year">2025–2026</div>
       </div>
-      <div class="work-row" data-case="practitioner" data-img="assets/images/branding/practitioner/practitioner-brand-board.png">
+      <div class="work-row" data-case="practitioner" data-cat="branding" data-img="assets/images/branding/practitioner/practitioner-brand-board.png">
         <div class="w-num">03</div><div class="w-title">PRACTITIONER</div>
         <div class="w-tags"><span class="w-tag">Brand Identity</span><span class="w-tag">Motion</span></div>
         <div class="w-year">2025</div>
       </div>
-      <div class="work-row" data-case="hen-collab" data-img="assets/images/branding/hen-collab/hen-collab-cover.png">
+      <div class="work-row" data-case="hen-collab" data-cat="branding" data-img="assets/images/branding/hen-collab/hen-collab-cover.png">
         <div class="w-num">04</div><div class="w-title">HEN-COLLAB</div>
         <div class="w-tags"><span class="w-tag">Brand Identity</span><span class="w-tag">Print</span></div>
         <div class="w-year">2024</div>
       </div>
-      <div class="work-row" data-case="artist-epk" data-img="assets/images/artist-epk/album-art/Hello_Ego_Flow.jpg">
+      <div class="work-row" data-case="artist-epk" data-cat="graphic" data-img="assets/images/artist-epk/album-art/Hello_Ego_Flow.jpg">
         <div class="w-num">05</div><div class="w-title">ARTIST EPKs/ALBUM ART</div>
         <div class="w-tags"><span class="w-tag">Music Packaging</span><span class="w-tag">EPK Design</span></div>
         <div class="w-year">2023–2025</div>
       </div>
-      <div class="work-row" data-case="tix4-ux" data-img="assets/images/ux-ui/tix4_ticket_sales.png">
+      <div class="work-row" data-case="tix4-ux" data-cat="ux-ui" data-img="assets/images/ux-ui/tix4_ticket_sales.png">
         <div class="w-num">06</div><div class="w-title">TIX4 UX REDESIGN</div>
         <div class="w-tags"><span class="w-tag">Product Design</span><span class="w-tag">UX Strategy</span></div>
         <div class="w-year">2024</div>
       </div>
-      <div class="work-row" data-case="0e-widgets" data-img="assets/images/ux-ui/0e-widgets/0e-widgets-mockup.png">
+      <div class="work-row" data-case="0e-widgets" data-cat="ux-ui" data-img="assets/images/ux-ui/0e-widgets/0e-widgets-mockup.png">
         <div class="w-num">07</div><div class="w-title">0E UI WIDGETS</div>
         <div class="w-tags"><span class="w-tag">UI Design</span><span class="w-tag">Motion</span></div>
         <div class="w-year">2025</div>
       </div>
-      <div class="work-row" data-case="ux-ui" data-img="assets/images/ux-ui/ae-dining/screen4.png">
+      <div class="work-row" data-case="ae-dining" data-cat="ux-ui" data-img="assets/images/ux-ui/ae-dining/screen4.png">
         <div class="w-num">08</div><div class="w-title">UX / UI PROJECTS</div>
         <div class="w-tags"><span class="w-tag">UX / UI</span><span class="w-tag">App Design</span></div>
         <div class="w-year">2024–2025</div>
       </div>
-      <div class="work-row" data-case="real-estate" data-img="assets/images/real-estate/petrosian-cover.png">
+      <div class="work-row" data-case="real-estate" data-cat="graphic" data-img="assets/images/real-estate/petrosian-cover.png">
         <div class="w-num">09</div><div class="w-title">PETROSIAN REAL ESTATE</div>
         <div class="w-tags"><span class="w-tag">Pitch Deck</span><span class="w-tag">Print</span></div>
         <div class="w-year">2025</div>
       </div>
-      <div class="work-row" data-case="tix4branding" data-img="assets/images/branding/TIX4/tix4/tix4_cover.png">
+      <div class="work-row" data-case="tix4branding" data-cat="branding" data-img="assets/images/branding/TIX4/tix4/tix4_cover.png">
         <div class="w-num">10</div><div class="w-title">TIX4 BRANDING</div>
         <div class="w-tags"><span class="w-tag">Brand Identity</span><span class="w-tag">Merch</span></div>
         <div class="w-year">2023–2025</div>
       </div>
-      <div class="work-row" data-case="posterdesign" data-img="assets/images/posters/bahaus_posterDesign.webp">
+      <div class="work-row" data-case="posterdesign" data-cat="graphic" data-img="assets/images/posters/bahaus_posterDesign.webp">
         <div class="w-num">11</div><div class="w-title">POSTER DESIGN</div>
         <div class="w-tags"><span class="w-tag">Print Design</span><span class="w-tag">Art Direction</span></div>
         <div class="w-year">2023–2025</div>
@@ -171,18 +179,18 @@
   <section id="logofolio">
     <div class="logo-head"><div class="logo-head-t">LOGOFOLIO</div><div class="logo-head-s">Selected Mark Work</div></div>
     <div class="logo-grid">
-      <div class="logo-cell"><img src="assets/images/logofolio/mv-logo.png" alt="MV" loading="lazy" onerror="this.outerHTML='<span class=&quot;logo-fb&quot;>MV</span>'"></div>
-      <div class="logo-cell"><img src="assets/images/logofolio/reading-nemo.png" alt="Reading Nemo" loading="lazy" onerror="this.outerHTML='<span class=&quot;logo-fb&quot; style=&quot;font-size:11px&quot;>READING NEMO</span>'"></div>
-      <div class="logo-cell"><img src="assets/images/logofolio/zer0-eden.png" alt="Zer0 Eden" loading="lazy" onerror="this.outerHTML='<span class=&quot;logo-fb&quot;>ZER0 EDEN</span>'"></div>
-      <div class="logo-cell"><img src="assets/images/logofolio/practitioner-logo.png" alt="Practitioner" loading="lazy" onerror="this.outerHTML='<span class=&quot;logo-fb&quot; style=&quot;font-size:11px&quot;>PRACTITIONER</span>'"></div>
-      <div class="logo-cell"><img src="assets/images/logofolio/reading-nemo-seal.png" alt="Nemo Seal" loading="lazy" onerror="this.outerHTML='<span class=&quot;logo-fb&quot;>SEAL</span>'"></div>
-      <div class="logo-cell"><img src="assets/images/logofolio/hex-mark.png" alt="Hex" loading="lazy" onerror="this.outerHTML='<span class=&quot;logo-fb&quot;>⬡</span>'"></div>
-      <div class="logo-cell"><img src="assets/images/logofolio/blackmvss-logo.png" alt="Black MVSS" loading="lazy" onerror="this.outerHTML='<span class=&quot;logo-fb&quot; style=&quot;font-size:10px&quot;>BLACK.MVSS</span>'"></div>
-      <div class="logo-cell"><img src="assets/images/logofolio/hen-icon.png" alt="HEN" loading="lazy" onerror="this.outerHTML='<span class=&quot;logo-fb&quot;>HEN</span>'"></div>
-      <div class="logo-cell"><img src="assets/images/logofolio/tix4-logo.png" alt="TIX4" loading="lazy" onerror="this.outerHTML='<span class=&quot;logo-fb&quot;>TIX4</span>'"></div>
-      <div class="logo-cell"><img src="assets/images/logofolio/ctrl-us-logo.png" alt="CTRL-US" loading="lazy" onerror="this.outerHTML='<span class=&quot;logo-fb&quot; style=&quot;font-size:12px&quot;>CTRL-US</span>'"></div>
-      <div class="logo-cell"><img src="assets/images/logofolio/0e-logo.png" alt="0E" loading="lazy" onerror="this.outerHTML='<span class=&quot;logo-fb&quot;>0E</span>'"></div>
-      <div class="logo-cell"><img src="assets/images/logofolio/kaedo-logo.png" alt="KAEDO" loading="lazy" onerror="this.outerHTML='<span class=&quot;logo-fb&quot;>KAEDO</span>'"></div>
+      <div class="logo-cell"><img src="assets/images/logos/blackmvss.svg" alt="Black MVSS" loading="lazy" onerror="this.outerHTML='<span class=&quot;logo-fb&quot;>BLACK MVSS</span>'"></div>
+      <div class="logo-cell"><img src="assets/images/logos/practitioner-logo.svg" alt="Practitioner" loading="lazy" onerror="this.outerHTML='<span class=&quot;logo-fb&quot;>PRACTITIONER</span>'"></div>
+      <div class="logo-cell"><img src="assets/images/logos/hen.svg" alt="HEN" loading="lazy" onerror="this.outerHTML='<span class=&quot;logo-fb&quot;>HEN</span>'"></div>
+      <div class="logo-cell"><img src="assets/images/logos/ctrl-us.svg" alt="CTRL-US" loading="lazy" onerror="this.outerHTML='<span class=&quot;logo-fb&quot;>CTRL-US</span>'"></div>
+      <div class="logo-cell"><img src="assets/images/logos/zeroeden.svg" alt="Zer0 Eden" loading="lazy" onerror="this.outerHTML='<span class=&quot;logo-fb&quot;>ZER0 EDEN</span>'"></div>
+      <div class="logo-cell"><img src="assets/images/logos/reading-nemo.svg" alt="Reading Nemo" loading="lazy" onerror="this.outerHTML='<span class=&quot;logo-fb&quot;>READING NEMO</span>'"></div>
+      <div class="logo-cell"><img src="assets/images/logos/reading-nemo-2.svg" alt="Reading Nemo 2" loading="lazy" onerror="this.outerHTML='<span class=&quot;logo-fb&quot;>NEMO SEAL</span>'"></div>
+      <div class="logo-cell"><img src="assets/images/logos/dg-realty.svg" alt="DG Realty" loading="lazy" onerror="this.outerHTML='<span class=&quot;logo-fb&quot;>DG REALTY</span>'"></div>
+      <div class="logo-cell"><img src="assets/images/logos/masive.svg" alt="Masive" loading="lazy" onerror="this.outerHTML='<span class=&quot;logo-fb&quot;>MASIVE</span>'"></div>
+      <div class="logo-cell"><img src="assets/images/logos/abelton-lessons.svg" alt="Abelton Lessons" loading="lazy" onerror="this.outerHTML='<span class=&quot;logo-fb&quot;>ABELTON</span>'"></div>
+      <div class="logo-cell"><img src="assets/images/logos/sleepyboi.svg" alt="Sleepy Boi" loading="lazy" onerror="this.outerHTML='<span class=&quot;logo-fb&quot;>SLEEPY BOI</span>'"></div>
+      <div class="logo-cell"><img src="assets/images/logos/g-logo.svg" alt="G Logo" loading="lazy" onerror="this.outerHTML='<span class=&quot;logo-fb&quot;>G</span>'"></div>
     </div>
   </section>
 
@@ -191,7 +199,7 @@
     <div class="contact-grid">
       <div>
         <div class="c-lede"><strong>Open to senior creative and product design roles, creative director opportunities, and select freelance projects.</strong> Based in Las Vegas — available everywhere. If you're building something that needs to look like it matters, let's talk.</div>
-        <a class="c-btn" href="mailto:grayquickart@gmail.com">Start a Conversation ↗</a>
+        <a class="c-btn" href="/contact.html">Start a Conversation ↗</a>
       </div>
       <div>
         <ul class="info-list">
@@ -356,6 +364,31 @@ document.getElementById('nav-about').addEventListener('click', function(e) {
 });
 document.getElementById('cs-back').addEventListener('click', goBack);
 
+/* ── WORK TABS ── */
+var worksCount = document.getElementById('works-count');
+function updateWorksCount(filter) {
+  var count = 0;
+  document.querySelectorAll('.work-row').forEach(function(row) {
+    if (filter === 'all' || (row.dataset.cat && row.dataset.cat.split(' ').indexOf(filter) !== -1)) count++;
+  });
+  worksCount.textContent = '[ ' + count + ' Project' + (count !== 1 ? 's' : '') + ' — 2020 / 2025 ]';
+}
+document.querySelectorAll('.work-tab').forEach(function(tab) {
+  tab.addEventListener('click', function() {
+    document.querySelectorAll('.work-tab').forEach(function(t) { t.classList.remove('active'); });
+    tab.classList.add('active');
+    var filter = tab.dataset.filter;
+    document.querySelectorAll('.work-row').forEach(function(row) {
+      if (filter === 'all' || (row.dataset.cat && row.dataset.cat.split(' ').indexOf(filter) !== -1)) {
+        row.classList.remove('hidden');
+      } else {
+        row.classList.add('hidden');
+      }
+    });
+    updateWorksCount(filter);
+  });
+});
+
 /* ── REVEAL ── */
 function revealCheck(scrollY) {
   var vh = window.innerHeight;
@@ -499,7 +532,7 @@ var CS = {
     intro:["The challenge at Tix4 wasn't just designing campaign assets — it was building a visual language for a revolving door of Las Vegas headliners with zero turnaround time and zero brand inconsistency tolerated.","Kelly Clarkson, Cirque du Soleil, Buju Banton, Prince tribute shows — each act came with its own equity, its own audience, and its own visual expectations. My job was to honor all of that while keeping every campaign unmistakably Tix4."],
     tags:['Full Brand Identity System','Merchandising','QR Code Labeling','Print Collateral','Event Signage'],
     body:["I built a system, not a stack of one-offs. A modular campaign framework that could flex from a full billboard to a social story without losing hierarchy or impact. Red stayed the anchor. Typography adapted per show. Every asset was designed to convert, not just look good.","As Creative Lead I owned everything from initial concept to final delivery — working directly with talent teams, venue partners, and the booking platform to ensure visual and functional alignment. The site redesign ran parallel to campaign output, tightening the live booking experience for thousands of daily visitors."],
-    galleries:[{c:'g1',imgs:['assets/images/branding/TIX4/tix4/tix4_cover.png']},{c:'g1',imgs:['assets/images/branding/TIX4/tix4/tix4_brandOverview.png']},{c:'g1',imgs:['assets/images/branding/TIX4/tix4/tix4_logo.png']},{c:'g2',imgs:['assets/images/branding/TIX4/tix4/tix4_logoConstruction.png','assets/images/branding/TIX4/tix4/tix4_color.png','assets/images/branding/TIX4/tix4/tix4_type1.png','assets/images/branding/TIX4/tix4/tix4_type2.png']},{c:'g2',imgs:['assets/images/branding/TIX4/tix4/tix4_hat1.png','assets/images/branding/TIX4/tix4/tix4_hat2.png','assets/images/branding/TIX4/tix4/tix4_polo.png','assets/images/branding/TIX4/tix4/tix4_hoodie.png']},{c:'g1',imgs:['assets/images/branding/TIX4/tix4/tix4_mockups.png']}],
+    galleries:[{c:'g1',imgs:['assets/images/branding/TIX4/tix4/tix4_brandOverview.png']},{c:'g1',imgs:['assets/images/branding/TIX4/tix4/tix4_logo.png']},{c:'g2',imgs:['assets/images/branding/TIX4/tix4/tix4_logoConstruction.png','assets/images/branding/TIX4/tix4/tix4_color.png','assets/images/branding/TIX4/tix4/tix4_type1.png','assets/images/branding/TIX4/tix4/tix4_type2.png']},{c:'g2',imgs:['assets/images/branding/TIX4/tix4/tix4_hat1.png','assets/images/branding/TIX4/tix4/tix4_hat2.png','assets/images/branding/TIX4/tix4/tix4_polo.png','assets/images/branding/TIX4/tix4/tix4_hoodie.png']},{c:'g1',imgs:['assets/images/branding/TIX4/tix4/tix4_mockups.png']}],
     impact:'Platform used by thousands of visitors daily. Led visual direction for 20+ major Las Vegas productions including Allegiant Stadium, Planet Hollywood, and PH Live.',
     next:'tix4',nextT:'TIX4 CAMPAIGNS'
   },
