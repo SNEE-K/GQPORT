@@ -298,12 +298,6 @@ if (window.innerWidth > 900) {
   document.body.style.width = '100%';
   document.body.style.height = '100%';
 
-  var updateBodyHeight = function() {
-    var h = document.getElementById('scroll-wrap').scrollHeight;
-    document.body.style.height = h + 'px';
-    // The body is fixed so we use a phantom height element
-  };
-
   // Replace body overflow approach with a phantom height on html
   document.body.style.position = '';
   document.body.style.overflow = 'hidden';
@@ -475,7 +469,6 @@ document.querySelectorAll('.work-tab').forEach(function(tab) {
 function revealCheck(scrollY) {
   var vh = window.innerHeight;
   document.querySelectorAll('.reveal:not(.in)').forEach(function(el) {
-    var top = smoothEnabled ? (el.getBoundingClientRect().top + scrollY - sy) : el.getBoundingClientRect().top;
     if (el.getBoundingClientRect().top < vh * 0.9) el.classList.add('in');
   });
   document.querySelectorAll('.work-row:not(.in)').forEach(function(el, i) {
@@ -568,7 +561,7 @@ var CS = {
     intro:["Music packaging is one of the few places where design has to do emotional work before a single note plays. The Souls of Kingsmen EPK is the clearest example — starting with a full asset triage and logo rebuild, ending with a two-page layout that puts dark luxury in service of gospel power.","The visual had to honor the music. That's the only brief that matters."],
     tags:['EPK Design (5 Artists)','Album Artwork (9 Releases)','Cymatics Event Posters ×3','DRK&DRKR Poster','Full Send/420 Poster','Logo Rebuilds'],
     body:["Across the album art library — Underbelly, STYX, Pantheon, NOX, Isturite, Hello Ego, Evoke — each project demanded a completely different visual language while still reflecting senior-level command of composition, type, and atmosphere.","That range is the point. A creative director who can only execute one aesthetic isn't actually directing anything. The ability to fully inhabit a client's world without defaulting to your own signature style is the actual skill.","The Cymatics posters and DRK&DRKR work sit at the other end: typographically aggressive, high contrast, built for social and print simultaneously."],
-    galleries:[{c:'g2',imgs:['assets/images/artist-epk/epks/souls-of-kingsmen-1.png','assets/images/artist-epk/epks/BVSSTACTIC.png']},{c:'g3',imgs:['assets/images/artist-epk/album-art/underbelly.jpg','assets/images/artist-epk/album-art/styx.png','assets/images/artist-epk/album-art/pantheon.png']},{c:'g3',imgs:['assets/images/artist-epk/album-art/nox.png','assets/images/artist-epk/album-art/hello-ego-1.jpg','assets/images/artist-epk/album-art/isturite2.png']},{c:'g3',imgs:['assets/images/artist-epk/album-art/ego-pouya.png','assets/images/artist-epk/album-art/over-yonder.png','assets/images/artist-epk/album-art/ws-ego.png']},{c:'g3',imgs:['assets/images/artist-epk/posters/cymatics-1.png','assets/images/artist-epk/posters/drk-drkr.png','assets/images/artist-epk/posters/full-send-420.png']},{c:'g3',imgs:['assets/images/artist-epk/epks/kaedo-1.png','assets/images/artist-epk/epks/d3vinity-epk.jpg', 'assets/images/artist-epk/epks/HELLO_EGO.png']}],
+    galleries:[{c:'g2',imgs:['assets/images/artist-epk/epks/souls-of-kingsmen-1.png','assets/images/artist-epk/epks/BVSSTACTIC.png']},{c:'g3',imgs:['assets/images/artist-epk/album-art/underbelly.jpg','assets/images/artist-epk/album-art/styx.png','assets/images/artist-epk/album-art/pantheon.png']},{c:'g3',imgs:['assets/images/artist-epk/album-art/nox.png','assets/images/artist-epk/album-art/hello-ego-1.jpg','assets/images/artist-epk/album-art/isturite2.png']},{c:'g3',imgs:['assets/images/artist-epk/album-art/ego-pouya.png','assets/images/artist-epk/album-art/over-yonder.png','assets/images/artist-epk/album-art/ws-ego.png']},{c:'g3',imgs:['assets/images/artist-epk/posters/cymatics-1.png','assets/images/artist-epk/posters/drk-drkr.png','assets/images/artist-epk/posters/full-send-420.png']},{c:'g3',imgs:['assets/images/artist-epk/epks/kaedo-1.png','assets/images/artist-epk/epks/d3vinity-epk.jpg','assets/images/artist-epk/epks/HELLO_EGO.png']}],
     impact:'Delivered for active recording artists and event brands. Assets deployed across Spotify, streaming platforms, event promotions, and press kits.',
     next:'tix4-ux',nextT:'TIX4 UX REDESIGN'
   },
@@ -715,7 +708,6 @@ function openCase(id, noPush) {
   document.getElementById('page-cs').classList.add('active');
   window.scrollTo(0, 0);
   if (window.resetScroll) window.resetScroll();
-  history.pushState(null, '', '#' + id);
 }
 
 /* ── DEEP LINK RESTORE (from 404 redirect) ── */
