@@ -26,7 +26,7 @@ body::before{
 /* ── NAV ── */
 nav{position:fixed;top:0;left:0;right:0;z-index:800;display:flex;align-items:center;justify-content:space-between;padding:20px 40px;mix-blend-mode:difference;transition:background .3s ease,backdrop-filter .3s ease}
 nav.scrolled{background:rgba(8,8,8,.7);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);mix-blend-mode:normal}
-.nav-logo{font-family:var(--disp);font-size:20px;letter-spacing:.1em;color:var(--text);cursor:none}
+.nav-logo{height:32px;width:auto;display:block;cursor:none}
 .nav-links{display:flex;gap:36px;align-items:center;margin-left:20px;}
 .nav-link{font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--text);text-transform:uppercase;cursor:none;position:relative}
 .nav-link::after{content:'';position:absolute;bottom:-2px;left:0;right:0;height:1px;background:var(--accent);transform:scaleX(0);transform-origin:right;transition:transform .3s}

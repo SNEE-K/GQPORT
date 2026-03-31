@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" fill="none">
+  <rect width="32" height="32" fill="#080808"/>
+  <!-- corner ticks -->
+  <polyline points="0,5 0,0 5,0"   stroke="#FF5035" stroke-width="1" opacity="0.7"/>
+  <polyline points="27,0 32,0 32,5" stroke="#FF5035" stroke-width="1" opacity="0.7"/>
+  <polyline points="0,27 0,32 5,32" stroke="#FF5035" stroke-width="1" opacity="0.7"/>
+  <polyline points="27,32 32,32 32,27" stroke="#FF5035" stroke-width="1" opacity="0.7"/>
+  <!-- G white, Q accent -->
+  <text x="2"  y="23" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="19" font-weight="900" fill="#ffffff">G</text>
+  <text x="15" y="23" font-family="'Helvetica Neue',Helvetica,Arial,sans-serif" font-size="19" font-weight="900" fill="#FF5035">Q</text>
+  <!-- accent line -->
+  <line x1="2" y1="26" x2="30" y2="26" stroke="#FF5035" stroke-width="1" opacity="0.4"/>
+</svg>

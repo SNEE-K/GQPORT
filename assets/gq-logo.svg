@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" aria-label="GQ">
+  <defs>
+    <clipPath id="cp">
+      <rect width="48" height="48"/>
+    </clipPath>
+  </defs>
+
+  <!-- scanline texture overlay -->
+  <g clip-path="url(#cp)" opacity="0.06">
+    <line x1="0" y1="4"  x2="48" y2="4"  stroke="#FF5035" stroke-width="0.5"/>
+    <line x1="0" y1="8"  x2="48" y2="8"  stroke="#FF5035" stroke-width="0.5"/>
+    <line x1="0" y1="12" x2="48" y2="12" stroke="#FF5035" stroke-width="0.5"/>
+    <line x1="0" y1="16" x2="48" y2="16" stroke="#FF5035" stroke-width="0.5"/>
+    <line x1="0" y1="20" x2="48" y2="20" stroke="#FF5035" stroke-width="0.5"/>
+    <line x1="0" y1="24" x2="48" y2="24" stroke="#FF5035" stroke-width="0.5"/>
+    <line x1="0" y1="28" x2="48" y2="28" stroke="#FF5035" stroke-width="0.5"/>
+    <line x1="0" y1="32" x2="48" y2="32" stroke="#FF5035" stroke-width="0.5"/>
+    <line x1="0" y1="36" x2="48" y2="36" stroke="#FF5035" stroke-width="0.5"/>
+    <line x1="0" y1="40" x2="48" y2="40" stroke="#FF5035" stroke-width="0.5"/>
+    <line x1="0" y1="44" x2="48" y2="44" stroke="#FF5035" stroke-width="0.5"/>
+  </g>
+
+  <!-- corner tick marks — cyberpunk frame -->
+  <polyline points="0,8 0,0 8,0"   stroke="#FF5035" stroke-width="1.2" opacity="0.5"/>
+  <polyline points="40,0 48,0 48,8" stroke="#FF5035" stroke-width="1.2" opacity="0.5"/>
+  <polyline points="0,40 0,48 8,48" stroke="#FF5035" stroke-width="1.2" opacity="0.5"/>
+  <polyline points="40,48 48,48 48,40" stroke="#FF5035" stroke-width="1.2" opacity="0.5"/>
+
+  <!-- G — white, geometric, slightly condensed -->
+  <text
+    x="4" y="36"
+    font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+    font-size="28"
+    font-weight="900"
+    letter-spacing="-1"
+    fill="#ffffff"
+  >G</text>
+
+  <!-- Q — accent color, offset right, slightly overlapping -->
+  <text
+    x="22" y="36"
+    font-family="'Helvetica Neue', Helvetica, Arial, sans-serif"
+    font-size="28"
+    font-weight="900"
+    letter-spacing="-1"
+    fill="#FF5035"
+  >Q</text>
+
+  <!-- accent underline slash — cyberpunk detail -->
+  <line x1="4" y1="40" x2="20" y2="40" stroke="#ffffff" stroke-width="1.5" opacity="0.3"/>
+  <line x1="22" y1="40" x2="44" y2="40" stroke="#FF5035" stroke-width="1.5" opacity="0.6"/>
+</svg>
