@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Gray Quick</title>
+<script>
+  // GitHub Pages 404 redirect — store the path and send to home
+  var path = window.location.pathname;
+  // /work/case-id → store the case id for restoration
+  var segs = path.split('/');
+  if (segs[1] === 'work' && segs[2]) {
+    sessionStorage.setItem('gq_redirect', segs[2]);
+  }
+  window.location.replace('/');
+</script>
+</head>
+<body></body>
+</html>

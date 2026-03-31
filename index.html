@@ -22,7 +22,7 @@
   <div class="nav-links">
     <a class="nav-link" id="nav-work" href="#works">Work</a>
     <a class="nav-link" id="nav-about" href="#about">About</a>
-    <a class="c-btn-nav" href="contact.html">Start a Conversation</a>
+    <a class="c-btn-nav" href="/contact">Start a Conversation</a>
     <a class="nav-link" href="mailto:grayquickart@gmail.com"><span class="nav-dot"></span>Available</a>
   </div>
 </nav>
@@ -246,7 +246,7 @@
     <div class="contact-grid">
       <div>
         <div class="c-lede"><strong>Open to senior creative and product design roles, creative director opportunities, and select freelance projects.</strong> Based in Las Vegas — available everywhere. If you're building something that needs to look like it matters, let's talk.</div>
-        <a class="c-btn" href="/contact.html">Start a Conversation ↗</a>
+        <a class="c-btn" href="//contact">Start a Conversation ↗</a>
       </div>
       <div>
         <ul class="info-list">
@@ -485,7 +485,7 @@ function showHome() {
   document.getElementById('page-cs').classList.remove('active');
   window.scrollTo(0, 0);
   if (window.resetScroll) window.resetScroll();
-  history.pushState(null, '', location.pathname);
+  history.pushState({view:'home'}, '', '/');
   setTimeout(function() { revealCheck(0); }, 150);
 }
 
@@ -495,6 +495,16 @@ function goBack() {
     document.getElementById('works').scrollIntoView({ behavior: 'smooth' });
   }, 120);
 }
+
+window.addEventListener('popstate', function(e) {
+  var state = e.state;
+  if (state && state.case) {
+    openCase(state.case, true);
+  } else {
+    var pg = document.getElementById('page-cs');
+    if (pg.classList.contains('active')) showHome();
+  }
+});
 
 /* ── CASE STUDY DATA ── */
 var CS = {
@@ -637,10 +647,11 @@ var CS = {
 };
 
 /* ── OPEN CASE ── */
-function openCase(id) {
+function openCase(id, noPush) {
   var d = CS[id];
   if (!d) return;
   pi.classList.remove('vis');
+  if (!noPush) history.pushState({case:id}, '', '/work/' + id);
 
   var mH = d.meta.map(function(m) {
     return '<div><div class="cs-m-lbl">'+m.l+'</div><div class="cs-m-val">'+m.v+'</div></div>';
@@ -700,16 +711,21 @@ function openCase(id) {
   history.pushState(null, '', '#' + id);
 }
 
-/* ── HASH ROUTING ── */
+/* ── DEEP LINK RESTORE (from 404 redirect) ── */
 window.addEventListener('load', function() {
-  var h = location.hash.replace('#', '');
-  if (h && CS[h]) openCase(h);
-  else revealCheck(0);
-});
-window.addEventListener('popstate', function() {
-  var h = location.hash.replace('#', '');
-  if (h && CS[h]) openCase(h);
-  else showHome();
+  var redirect = sessionStorage.getItem('gq_redirect');
+  if (redirect) {
+    sessionStorage.removeItem('gq_redirect');
+    history.replaceState({case: redirect}, '', '/work/' + redirect);
+    openCase(redirect, true);
+  } else {
+    var segs = location.pathname.split('/');
+    if (segs[1] === 'work' && segs[2] && CS[segs[2]]) {
+      openCase(segs[2], true);
+    } else {
+      revealCheck(0);
+    }
+  }
 });
 
 /* ── NAV SCROLL BLUR ── */
