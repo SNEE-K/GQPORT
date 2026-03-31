@@ -403,17 +403,23 @@ document.querySelectorAll('.work-row[data-case]').forEach(function(row) {
 document.getElementById('nav-logo').addEventListener('click', showHome);
 document.getElementById('nav-work').addEventListener('click', function(e) {
   e.preventDefault();
-  showHome();
-  setTimeout(function() {
+  var onHome = document.getElementById('page-home').classList.contains('active');
+  if (!onHome) {
+    showHome();
+    setTimeout(function() { document.getElementById('works').scrollIntoView({ behavior: 'smooth' }); }, 300);
+  } else {
     document.getElementById('works').scrollIntoView({ behavior: 'smooth' });
-  }, 80);
+  }
 });
 document.getElementById('nav-about').addEventListener('click', function(e) {
   e.preventDefault();
-  showHome();
-  setTimeout(function() {
+  var onHome = document.getElementById('page-home').classList.contains('active');
+  if (!onHome) {
+    showHome();
+    setTimeout(function() { document.getElementById('about').scrollIntoView({ behavior: 'smooth' }); }, 300);
+  } else {
     document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
-  }, 80);
+  }
 });
 document.getElementById('cs-back').addEventListener('click', goBack);
 
