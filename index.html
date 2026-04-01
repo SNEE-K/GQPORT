@@ -99,7 +99,7 @@
         <div class="w-tags"><span class="w-tag">Music Packaging</span><span class="w-tag">EPK Design</span></div>
         <div class="w-year">2023–2025</div>
       </div>
-      <div class="work-row" data-case="tix4-ux" data-cat="ux-ui" data-img="assets/images/ux-ui/tix4_ticket_sales.webp">
+      <div class="work-row" data-case="tix4-ux" data-cat="ux-ui" data-img="assets/images/ux-ui/tix4ux/tix4-uxui-cover.webp">
         <div class="w-num">06</div><div class="w-title">TIX4 UX REDESIGN</div>
         <div class="w-tags"><span class="w-tag">Product Design</span><span class="w-tag">UX Strategy</span></div>
         <div class="w-year">2024</div>
@@ -109,7 +109,7 @@
         <div class="w-tags"><span class="w-tag">UI Design</span><span class="w-tag">Motion</span></div>
         <div class="w-year">2025</div>
       </div>
-      <div class="work-row" data-case="ux-ui" data-cat="ux-ui" data-img="assets/images/ux-ui/ae-dining/screen4.webp">
+      <div class="work-row" data-case="ux-ui" data-cat="ux-ui" data-img="assets/images/ux-ui/ae-dining/ae-cover.webp">
         <div class="w-num">08</div><div class="w-title">AUGMENTED EATS</div>
         <div class="w-tags"><span class="w-tag">AR App Design</span><span class="w-tag">UX / UI</span></div>
         <div class="w-year">2024–2025</div>
@@ -133,6 +133,11 @@
         <div class="w-num">12</div><div class="w-title">SMARTPLATE APP</div>
         <div class="w-tags"><span class="w-tag">AI App Design</span><span class="w-tag">UX / UI</span></div>
         <div class="w-year">2024</div>
+      </div>
+      <div class="work-row" data-case="mvss-studio" data-cat="branding" data-img="assets/images/branding/mvss/MVSS_BrandStyleGuide_2025-1.webp">
+        <div class="w-num">13</div><div class="w-title">MVSS STUDIO</div>
+        <div class="w-tags"><span class="w-tag">Brand Identity</span><span class="w-tag">Studio</span></div>
+        <div class="w-year">2025</div>
       </div>
     </div>
 
@@ -579,7 +584,8 @@ var CS = {
     intro:["The Tix4 site was built to move tickets, not convert visitors. There's a difference. Navigation was muddy, the booking flow had friction at every step, and the show pages weren't doing the job of communicating value before the purchase decision.","I led the redesign of the live booking experience — a platform thousands of Las Vegas visitors use daily."],
     tags:['UX Audit','Information Architecture','Show Detail Page Redesign','Booking Flow Redesign','Component Documentation','Navigation Redesign'],
     body:["The audit started with user flow analysis. The show detail page had three jobs — communicate value, create urgency, make date selection obvious — and it was failing at all three. Hierarchy was flat. The calendar wasn't scannable. Pricing surfaced too late.","The redesign restructured the page around those three jobs. Hero gallery first, experience description scannable, date/time selection clean and calendar-driven with clear availability states. Urgency signals built into time slot rows.","Navigation clarity improved across all main categories. Authentication entry points redesigned to reduce friction. Stress-tested against real inventory from Kelly Clarkson, Cirque, and Jabbawockeez."],
-    galleries:[{c:'g1',imgs:['assets/images/ux-ui/tix4_ticket_sales.webp']}],
+    galleries:[{c:'g1',imgs:['assets/images/ux-ui/tix4ux/tix4-uxui-cover.webp']},{c:'g1',imgs:['assets/images/ux-ui/tix4ux/tix4_ticket_sales.webp']},{c:'g2',imgs:['assets/images/ux-ui/tix4ux/tix4-ui-nkotb.webp','assets/images/ux-ui/tix4ux/tix4-uxui-ticketsale.webp']}],
+    video:'assets/video/tix4-uxui-video.mp4',
     impact:'Led redesign of live booking experience. Improved navigation clarity and user flow. Platform used by thousands of Las Vegas visitors daily.',
     next:'0e-widgets',nextT:'0E UI WIDGETS'
   },
@@ -598,7 +604,7 @@ var CS = {
   'ux-ui':{
     cat:'AR App Design / UX / UI',title:'AUGMENTED\nEATS',
     meta:[{l:'Role',v:'UX Designer / Art Director'},{l:'Type',v:'Concept — Mobile App (iOS)'},{l:'Year',v:'2024'},{l:'Platforms',v:'iOS / Apple Vision Pro'}],
-    hero:'assets/images/ux-ui/ae-dining/screen4.webp',
+    hero:'assets/images/ux-ui/ae-dining/ae-cover.webp',
     intro:["Most dining apps solve a digital problem. Augmented Eats solves a physical one. You're standing on a block in an unfamiliar city, hungry, with no idea what's around the corner — and instead of pulling you into a list and forcing you to cross-reference, the app puts the information directly on the world in front of you.","AR-assisted navigation, live menu previews before you arrive, directional overlays, real-time distance and wait estimates — all anchored to the physical environment so the experience never breaks from the moment you're already in."],
     tags:['AR Live View (LiDAR-assisted)','Directional Navigation Overlay','Live Menu Preview','Restaurant Discovery','Device Onboarding Flow','iOS Mobile UI','Apple Vision Pro UI','Spatial UX'],
     body:["The core insight behind Augmented Eats is that hunger is a spatial problem. You're somewhere — not everywhere. Existing apps treat location as a filter; this app treats it as the interface itself. The camera view is the homepage. Every restaurant within range becomes a live, tappable card overlaid on the actual street.","Designing the AR layer meant solving for information density without visual noise. Each restaurant pin shows name, distance, cuisine type, and a live wait estimate — all at a glance, without requiring a tap. Tap it, and a bottom sheet slides up with the full menu, photos, hours, and a 'Navigate' option that keeps the AR view active and draws a directional path on screen as you walk.","The onboarding was built around device selection first. iOS and Vision Pro handle spatial data differently — field of view, depth perception, interaction model — so the app establishes platform context before it establishes anything else. Vision Pro users get a fully spatial UI where menus float at comfortable reading depth and navigation lines arc through the environment in 3D. iOS users get the same logic compressed into a familiar camera-forward mobile format.","The mobile screens prioritize one thing per moment: discovery mode shows the AR view full bleed with minimal chrome. Menu preview mode collapses the AR to a corner PiP and expands the restaurant detail. Navigation mode clears almost everything except the directional overlay and a persistent arrival card at the top. Every state transition is intentional — nothing competes for attention with what the user is currently doing."],
@@ -615,6 +621,17 @@ var CS = {
     body:["The first design challenge was scope. Nutrition apps tend to fail in one of two ways: they're either too rigid (log every gram or the data is useless) or too generic (here's a calorie goal, good luck). SmartPlate needed to be neither. The AI layer exists specifically to absorb that friction — a photo of your meal is enough, a voice note works too. The system does the work of translating real-world eating into structured health data so the user doesn't have to.","Onboarding was the most critical UX problem on the project. The app only gets smarter if it knows who it's talking to, but long health surveys kill activation. We solved it with a progressive profiling model: the initial setup captures the essentials — height, weight, biological sex, primary goal (lose, maintain, gain, manage condition) — and the AI fills in the rest over time based on behavior. Users who want to go deeper can, but no one is blocked from getting started.","The personalization engine is where the product earns its premise. A user managing Type 2 diabetes gets a fundamentally different experience than someone training for a marathon — different macro targets, different food recommendations, different ways of framing progress. The UI surfaces this without ever feeling clinical. Health data is presented through clean, readable charts and plain language summaries rather than raw numbers, because the goal is understanding, not just tracking.","Geolocation and restaurant discovery tie the app to the real world. When a user is out and hungry, SmartPlate surfaces nearby options filtered by their current nutritional needs — not just cuisine type. It shows what fits their goals, flags items on menus that work for their dietary restrictions, and can even suggest modifications. For users who prefer cooking, the recipe engine generates meals around available ingredients and current macro gaps, with a direct path to sourcing anything missing."],
     galleries:[{c:'g1',imgs:['assets/images/ux-ui/smartplate/smartplate-mockup.webp']},{c:'g2',imgs:['assets/images/ux-ui/smartplate/smartplate-slide-00.webp','assets/images/ux-ui/smartplate/smartplate-slide-3.webp']},{c:'g1',imgs:['assets/images/ux-ui/smartplate/smartplate-slide-4.webp']}],
     impact:'Graduate-level collaborative UX project. Full end-to-end product design — from research and onboarding through AI-driven personalization, geolocation discovery, and recipe generation. Designed to production fidelity across a team of four.',
+    next:'mvss-studio',nextT:'MVSS STUDIO'
+  },
+  'mvss-studio':{
+    cat:'Brand Identity / Studio Branding',title:'MVSS\nSTUDIO',
+    meta:[{l:'Role',v:'Founder / Creative Director'},{l:'Type',v:'Own Studio'},{l:'Year',v:'2025'},{l:'Scope',v:'Brand Identity, Visual System, Web Design, Motion'}],
+    hero:'assets/images/branding/mvss/MVSS_BrandStyleGuide_2025-1.webp',
+    intro:["MVSS Studio is the creative and digital production studio I built from the ground up. The brief was simple: design the studio you've always wanted to work for. The result is a full-service digital design shop with a specific point of view — one built entirely around the energy, aesthetics, and demands of music culture.","We specialize in crafting digital experiences, graphic design, motion, UX/UI, and web design for musicians and music-adjacent brands. EDM, hip-hop, underground events, major festival acts — MVSS is the go-to studio when the work needs to hit as hard as the music it represents."],
+    tags:['Studio Brand Identity','Visual System','Typography & Color System','Motion Identity','Web Design','Digital Experiences','Graphic Design','UX / UI'],
+    body:["Building a studio brand means designing for your most critical audience: potential clients who are also designers and creatives. Every decision has to be defensible. The MVSS identity is built around precision and energy — a mark that reads equally well on a business card, a stage screen, and a digital campaign header.","The color system is intentional: deep blacks, sharp whites, and a controlled accent palette that can flex toward whatever genre we're working in without losing the studio's core identity. The typography stack is display-first — bold enough to command attention on large formats, refined enough to work at small scale in UI contexts.","Motion is embedded in the brand from the start, not bolted on. The logo construction, the transitions, the way elements enter and exit — all of it is choreographed. A static studio brand for a motion-native industry is a contradiction, and MVSS doesn't make that mistake.","The studio's focus on EDM and music events is a deliberate positioning choice, not a limitation. Music culture moves faster than almost any other vertical, demands higher aesthetic standards, and rewards studios that actually understand the scene. MVSS operates from inside that world — not as an outside vendor, but as a creative partner who shows up already knowing the language."],
+    galleries:[{c:'g1',imgs:['assets/images/branding/mvss/MVSS_BrandStyleGuide_2025-1.webp']},{c:'g1',imgs:['assets/images/branding/mvss/MVSS_BrandStyleGuide_2025-2.webp']},{c:'g1',imgs:['assets/images/branding/mvss/MVSS_BrandStyleGuide_2025-3.webp']}],
+    impact:'Own studio. Full brand system designed and deployed. Actively operating — serving musicians, event brands, and music-adjacent clients across digital design, motion, and web.',
     next:'real-estate',nextT:'PETROSIAN REAL ESTATE'
   },
   'real-estate':{
