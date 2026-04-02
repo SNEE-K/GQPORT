@@ -433,9 +433,9 @@ document.getElementById('nav-work').addEventListener('click', function(e) {
   var onHome = document.getElementById('page-home').classList.contains('active');
   if (!onHome) {
     showHome();
-    setTimeout(function() { document.getElementById('works').scrollIntoView({ behavior: 'smooth' }); }, 300);
+    setTimeout(function() { window.scrollTo({ top: document.getElementById('works').offsetTop, behavior: 'smooth' }); }, 300);
   } else {
-    document.getElementById('works').scrollIntoView({ behavior: 'smooth' });
+    window.scrollTo({ top: document.getElementById('works').offsetTop, behavior: 'smooth' });
   }
 });
 document.getElementById('nav-about').addEventListener('click', function(e) {
@@ -443,9 +443,9 @@ document.getElementById('nav-about').addEventListener('click', function(e) {
   var onHome = document.getElementById('page-home').classList.contains('active');
   if (!onHome) {
     showHome();
-    setTimeout(function() { document.getElementById('about').scrollIntoView({ behavior: 'smooth' }); }, 300);
+    setTimeout(function() { window.scrollTo({ top: document.getElementById('about').offsetTop, behavior: 'smooth' }); }, 300);
   } else {
-    document.getElementById('about').scrollIntoView({ behavior: 'smooth' });
+    window.scrollTo({ top: document.getElementById('about').offsetTop, behavior: 'smooth' });
   }
 });
 document.getElementById('cs-back').addEventListener('click', goBack);
