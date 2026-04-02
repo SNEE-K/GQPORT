@@ -15,7 +15,7 @@
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:image" content="https://grayquick.net/assets/images/ogimage.png">
-<script src="https://t.contentsquare.net/uxa/74665bc162051.js"></script>
+<script async src="https://t.contentsquare.net/uxa/74665bc162051.js"></script>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-331PKQEN64"></script>
 <script>
@@ -363,10 +363,12 @@ if (window.innerWidth > 900) {
   };
 
   (function tick() {
-    sy = lerp(sy, ty, 0.075);
+    sy = lerp(sy, ty, 0.12);
     if (Math.abs(sy - ty) < 0.08) sy = ty;
     swrap.style.transform = 'translateY(' + (-sy) + 'px)';
     revealCheck(sy);
+    rx = lerp(rx, mx, 0.18); ry = lerp(ry, my, 0.18);
+    ring.style.transform = 'translate3d(' + (rx - 20) + 'px,' + (ry - 20) + 'px,0)';
     requestAnimationFrame(tick);
   })();
 
@@ -381,16 +383,8 @@ var mx = 0, my = 0, rx = 0, ry = 0;
 
 document.addEventListener('mousemove', function(e) {
   mx = e.clientX; my = e.clientY;
-  cur.style.left = mx + 'px';
-  cur.style.top  = my + 'px';
+  cur.style.transform = 'translate3d(' + (mx - 4) + 'px,' + (my - 4) + 'px,0)';
 });
-
-setInterval(function() {
-  rx = lerp(rx, mx, 0.1);
-  ry = lerp(ry, my, 0.1);
-  ring.style.left = rx + 'px';
-  ring.style.top  = ry + 'px';
-}, 14);
 
 function addBigCursor(el) {
   el.addEventListener('mouseenter', function() { cur.classList.add('big'); });
