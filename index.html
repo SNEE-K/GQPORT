@@ -154,22 +154,22 @@
 
     <!-- MOTION GALLERY -->
     <div id="motion-gallery" class="tab-gallery hidden">
-      <video class="tg-item" src="assets/video/blackmvss_Showcase.mp4" autoplay muted loop playsinline></video>
-      <video class="tg-item" src="assets/video/Distorted-Logo-Practitioner.mp4" autoplay muted loop playsinline></video>
-      <video class="tg-item" src="assets/video/ryanxmario_landscape.mp4" autoplay muted loop playsinline></video>
-      <video class="tg-item" src="assets/video/0e-widgets-motion.mp4" autoplay muted loop playsinline></video>
-      <video class="tg-item" src="assets/video/rickMartin.mp4" autoplay muted loop playsinline></video>
-      <video class="tg-item" src="assets/video/boyz2men (1).mp4" autoplay muted loop playsinline></video> 
-      <video class="tg-item" src="assets/video/Beyonce (1).mp4" autoplay muted loop playsinline></video>
-      <video class="tg-item" src="assets/video/andrewDice (1).mp4" autoplay muted loop playsinline></video>
-      <video class="tg-item" src="assets/video/BTR (1).mp4" autoplay muted loop playsinline></video>
-      <video class="tg-item" src="assets/video/F1.mp4" autoplay muted loop playsinline></video>
-      <video class="tg-item" src="assets/video/O.mp4" autoplay muted loop playsinline></video>
-      <video class="tg-item" src="assets/video/wandaSykes.mp4" autoplay muted loop playsinline></video>
-      <video class="tg-item" src="assets/video/Mayhem.mp4" autoplay muted loop playsinline></video>
-      <video class="tg-item" src="assets/video/fatBurger.mp4" autoplay muted loop playsinline></video>
-      <video class="tg-item" src="assets/video/marcAnthony (1).mp4" autoplay muted loop playsinline></video>
-      <video class="tg-item" src="assets/video/blakeShelton (1).mp4" autoplay muted loop playsinline></video>
+      <video class="tg-item" src="assets/video/blackmvss_Showcase.mp4" muted loop playsinline></video>
+      <video class="tg-item" src="assets/video/Distorted-Logo-Practitioner.mp4" muted loop playsinline></video>
+      <video class="tg-item" src="assets/video/ryanxmario_landscape.mp4" muted loop playsinline></video>
+      <video class="tg-item" src="assets/video/0e-widgets-motion.mp4" muted loop playsinline></video>
+      <video class="tg-item" src="assets/video/rickMartin.mp4" muted loop playsinline></video>
+      <video class="tg-item" src="assets/video/boyz2men (1).mp4" muted loop playsinline></video>
+      <video class="tg-item" src="assets/video/Beyonce (1).mp4" muted loop playsinline></video>
+      <video class="tg-item" src="assets/video/andrewDice (1).mp4" muted loop playsinline></video>
+      <video class="tg-item" src="assets/video/BTR (1).mp4" muted loop playsinline></video>
+      <video class="tg-item" src="assets/video/F1.mp4" muted loop playsinline></video>
+      <video class="tg-item" src="assets/video/O.mp4" muted loop playsinline></video>
+      <video class="tg-item" src="assets/video/wandaSykes.mp4" muted loop playsinline></video>
+      <video class="tg-item" src="assets/video/Mayhem.mp4" muted loop playsinline></video>
+      <video class="tg-item" src="assets/video/fatBurger.mp4" muted loop playsinline></video>
+      <video class="tg-item" src="assets/video/marcAnthony (1).mp4" muted loop playsinline></video>
+      <video class="tg-item" src="assets/video/blakeShelton (1).mp4" muted loop playsinline></video>
   
     </div>
 
@@ -413,6 +413,10 @@ document.querySelectorAll('.work-row[data-img]').forEach(function(row) {
 /* ── WORK ROW CLICK ── */
 document.querySelectorAll('.work-row[data-case]').forEach(function(row) {
   row.addEventListener('click', function() {
+    gtag('event', 'select_content', {
+      content_type: 'case_study',
+      content_id: row.dataset.case
+    });
     openCase(row.dataset.case);
   });
 });
@@ -441,6 +445,12 @@ document.getElementById('nav-about').addEventListener('click', function(e) {
 });
 document.getElementById('cs-back').addEventListener('click', goBack);
 
+document.querySelectorAll('.c-btn, .c-btn-nav').forEach(function(btn) {
+  btn.addEventListener('click', function() {
+    gtag('event', 'contact_click', { link_text: btn.textContent.trim() });
+  });
+});
+
 /* ── WORK TABS ── */
 var worksCount = document.getElementById('works-count');
 var workList = document.querySelector('.work-list');
@@ -461,6 +471,7 @@ document.querySelectorAll('.work-tab').forEach(function(tab) {
     document.querySelectorAll('.work-tab').forEach(function(t) { t.classList.remove('active'); });
     tab.classList.add('active');
     var filter = tab.dataset.filter;
+    gtag('event', 'filter_portfolio', { filter_value: filter });
 
     if (galleryFilters.indexOf(filter) !== -1) {
       // gallery mode — hide work list, hide count, show correct gallery
@@ -468,7 +479,12 @@ document.querySelectorAll('.work-tab').forEach(function(tab) {
       worksCount.style.visibility = 'hidden';
       motionGallery.classList.add('hidden');
       socialGallery.classList.add('hidden');
-      if (filter === 'motion') motionGallery.classList.remove('hidden');
+      if (filter === 'motion') {
+        motionGallery.classList.remove('hidden');
+        motionGallery.querySelectorAll('video').forEach(function(v) {
+          if (v.paused) v.play();
+        });
+      }
       if (filter === 'social') socialGallery.classList.remove('hidden');
     } else {
       // list mode — show work list, filter rows, update count
@@ -509,6 +525,11 @@ function showHome() {
   window.scrollTo(0, 0);
   if (window.resetScroll) window.resetScroll();
   history.pushState({view:'home'}, '', '/');
+  gtag('event', 'page_view', {
+    page_title: 'Gray Quick — Home',
+    page_location: window.location.origin + '/',
+    page_path: '/'
+  });
   setTimeout(function() { revealCheck(0); }, 150);
 }
 
@@ -688,6 +709,11 @@ function openCase(id, noPush) {
   if (!d) return;
   pi.classList.remove('vis');
   if (!noPush) history.pushState({case:id}, '', '/work/' + id);
+  gtag('event', 'page_view', {
+    page_title: d.title.replace(/\n/g, ' '),
+    page_location: window.location.origin + '/work/' + id,
+    page_path: '/work/' + id
+  });
 
   var mH = d.meta.map(function(m) {
     return '<div><div class="cs-m-lbl">'+m.l+'</div><div class="cs-m-val">'+m.v+'</div></div>';
@@ -717,7 +743,7 @@ function openCase(id, noPush) {
       '<div class="cs-h1">'+titleH+'</div>' +
       '<div class="cs-meta">'+mH+'</div>' +
     '</div>' +
-    '<div class="cs-hero-img"><img src="'+d.hero+'" alt=""></div>' +
+    '<div class="cs-hero-img"><img src="'+d.hero+'" alt="" loading="lazy"></div>' +
     '<div class="cs-body">' +
       '<div class="cs-overview">' +
         '<div class="cs-ov-lbl">Overview</div>' +
