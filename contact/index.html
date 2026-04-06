@@ -1,297 +1,504 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contact — Gray Quick</title>
-<script src="https://t.contentsquare.net/uxa/74665bc162051.js"></script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-331PKQEN64"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-331PKQEN64');
-</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@300;400;500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/styles.css">
-<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
-<style>
-/* ── CONTACT PAGE ── */
-.contact-page{min-height:100svh;padding:140px 40px 80px;max-width:900px;margin:0 auto}
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact — Gray Quick</title>
+  <script async src="https://t.contentsquare.net/uxa/74665bc162051.js"></script>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-331PKQEN64"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-331PKQEN64');
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload"
+    href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@300;400;500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap"
+    as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript>
+    <link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@300;400;500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap">
+  </noscript>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+  <style>
+    /* ── CONTACT PAGE ── */
+    .contact-page {
+      min-height: 100svh;
+      padding: 140px 40px 80px;
+      max-width: 900px;
+      margin: 0 auto
+    }
 
-.cp-h1{font-family:var(--disp);font-size:clamp(60px,10vw,130px);letter-spacing:.03em;line-height:.86;margin-bottom:16px}
-.cp-sub{font-family:var(--mono);font-size:12px;letter-spacing:.16em;color:var(--dim);text-transform:uppercase;margin-bottom:64px}
+    .cp-h1 {
+      font-family: var(--disp);
+      font-size: clamp(60px, 10vw, 130px);
+      letter-spacing: .03em;
+      line-height: .86;
+      margin-bottom: 16px
+    }
 
-/* ── SOCIALS ── */
-.cp-socials{display:flex;gap:28px;margin-bottom:80px}
-.cp-social{display:flex;align-items:center;justify-content:center;width:48px;height:48px;border:1px solid var(--border);border-radius:50%;color:var(--dim);transition:color .2s,border-color .2s;cursor:none}
-.cp-social:hover{color:var(--accent);border-color:var(--accent)}
-.cp-social svg{width:18px;height:18px;fill:currentColor}
+    .cp-sub {
+      font-family: var(--mono);
+      font-size: 12px;
+      letter-spacing: .16em;
+      color: var(--dim);
+      text-transform: uppercase;
+      margin-bottom: 64px
+    }
 
-/* ── INFO ROW ── */
-.cp-info{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;margin-bottom:64px;border:1px solid var(--border);border-radius:4px;overflow:hidden}
-.cp-info-item{display:flex;align-items:center;gap:14px;padding:20px 24px;background:var(--bg2)}
-.cp-info-icon{flex-shrink:0;color:var(--accent)}
-.cp-info-icon svg{width:18px;height:18px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
-.cp-info-label{font-family:var(--mono);font-size:9px;letter-spacing:.12em;color:var(--dim);text-transform:uppercase;margin-bottom:4px}
-.cp-info-val{font-size:13px;color:var(--text)}
+    /* ── SOCIALS ── */
+    .cp-socials {
+      display: flex;
+      gap: 28px;
+      margin-bottom: 80px
+    }
 
-/* ── FORM ── */
-.cp-form{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-.cp-form-full{grid-column:1/-1}
-.cp-field{display:flex;flex-direction:column;gap:8px}
-.cp-field label{font-family:var(--mono);font-size:9px;letter-spacing:.14em;color:var(--dim);text-transform:uppercase}
-.cp-field input,.cp-field textarea{background:var(--bg2);border:1px solid var(--border);border-radius:3px;padding:14px 16px;color:var(--text);font-family:var(--body);font-size:14px;outline:none;transition:border-color .2s;width:100%}
-.cp-field input:focus,.cp-field textarea:focus{border-color:var(--accent)}
-.cp-field textarea{resize:vertical;min-height:140px}
-.cp-submit{grid-column:1/-1;margin-top:8px}
-.cp-submit button{display:inline-flex;align-items:center;gap:12px;background:var(--accent);color:var(--bg);font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;padding:15px 36px;border-radius:100px;border:none;cursor:none;transition:background .2s}
-.cp-submit button:hover{background:var(--text)}
+    .cp-social {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 48px;
+      height: 48px;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      color: var(--dim);
+      transition: color .2s, border-color .2s;
+      cursor: none
+    }
 
-.cp-success{display:none;font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:#4ade80;text-transform:uppercase;margin-top:20px;grid-column:1/-1}
+    .cp-social:hover {
+      color: var(--accent);
+      border-color: var(--accent)
+    }
 
-@media(max-width:900px){
-  .contact-page{padding:120px 20px 60px}
-  .cp-info{grid-template-columns:1fr}
-  .cp-form{grid-template-columns:1fr}
-  .cp-form-full{grid-column:1}
-  .cp-submit{grid-column:1}
-  .cp-success{grid-column:1}
-}
-</style>
+    .cp-social svg {
+      width: 18px;
+      height: 18px;
+      fill: currentColor
+    }
+
+    /* ── INFO ROW ── */
+    .cp-info {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      margin-bottom: 64px;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      overflow: hidden
+    }
+
+    .cp-info-item {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 20px 24px;
+      background: var(--bg2)
+    }
+
+    .cp-info-icon {
+      flex-shrink: 0;
+      color: var(--accent)
+    }
+
+    .cp-info-icon svg {
+      width: 18px;
+      height: 18px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 1.5;
+      stroke-linecap: round;
+      stroke-linejoin: round
+    }
+
+    .cp-info-label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .12em;
+      color: var(--dim);
+      text-transform: uppercase;
+      margin-bottom: 4px
+    }
+
+    .cp-info-val {
+      font-size: 13px;
+      color: var(--text)
+    }
+
+    /* ── FORM ── */
+    .cp-form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px
+    }
+
+    .cp-form-full {
+      grid-column: 1/-1
+    }
+
+    .cp-field {
+      display: flex;
+      flex-direction: column;
+      gap: 8px
+    }
+
+    .cp-field label {
+      font-family: var(--mono);
+      font-size: 9px;
+      letter-spacing: .14em;
+      color: var(--dim);
+      text-transform: uppercase
+    }
+
+    .cp-field input,
+    .cp-field textarea {
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 3px;
+      padding: 14px 16px;
+      color: var(--text);
+      font-family: var(--body);
+      font-size: 14px;
+      outline: none;
+      transition: border-color .2s;
+      width: 100%
+    }
+
+    .cp-field input:focus,
+    .cp-field textarea:focus {
+      border-color: var(--accent)
+    }
+
+    .cp-field textarea {
+      resize: vertical;
+      min-height: 140px
+    }
+
+    .cp-submit {
+      grid-column: 1/-1;
+      margin-top: 8px
+    }
+
+    .cp-submit button {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      background: var(--accent);
+      color: var(--bg);
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+      padding: 15px 36px;
+      border-radius: 100px;
+      border: none;
+      cursor: none;
+      transition: background .2s
+    }
+
+    .cp-submit button:hover {
+      background: var(--text)
+    }
+
+    .cp-success {
+      display: none;
+      font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .1em;
+      color: #4ade80;
+      text-transform: uppercase;
+      margin-top: 20px;
+      grid-column: 1/-1
+    }
+
+    @media(max-width:900px) {
+      .contact-page {
+        padding: 120px 20px 60px
+      }
+
+      .cp-info {
+        grid-template-columns: 1fr
+      }
+
+      .cp-form {
+        grid-template-columns: 1fr
+      }
+
+      .cp-form-full {
+        grid-column: 1
+      }
+
+      .cp-submit {
+        grid-column: 1
+      }
+
+      .cp-success {
+        grid-column: 1
+      }
+    }
+  </style>
 </head>
+
 <body>
 
-<div id="cur"></div>
-<div id="cur-ring"></div>
+  <div id="cur"></div>
+  <div id="cur-ring"></div>
 
-<nav>
-  <a class="nav-logo" href="/"><img src="/assets/gq-logo.svg" alt="GQ" style="height:32px;width:auto;display:block;"></a>
-  <div class="nav-links">
-    <a class="nav-link" href="/">Work</a>
-    <a class="nav-link" href="/#about">About</a>
-    <a class="c-btn-nav" href="/">Back to Home</a>
-  </div>
-</nav>
+  <nav>
+    <a class="nav-logo" href="/"><img src="/assets/gq-logo.svg" alt="GQ" width="40" height="32"
+        style="height:32px;width:auto;display:block;"></a>
+    <div class="nav-links">
+      <a class="nav-link" href="/">Work</a>
+      <a class="nav-link" href="/#about">About</a>
+      <a class="c-btn-nav" href="/">Back to Home</a>
+    </div>
+  </nav>
 
-<div id="scroll-wrap">
-<div class="contact-page">
+  <div id="scroll-wrap">
+    <div class="contact-page">
 
-  <div class="cp-h1">LET'S GET<br>IN TOUCH.</div>
-  <div class="cp-sub">Time to create something amazing</div>
+      <div class="cp-h1">LET'S GET<br>IN TOUCH.</div>
+      <div class="cp-sub">Time to create something amazing</div>
 
-  <!-- SOCIALS -->
-  <div class="cp-socials">
-    <a class="cp-social" href="https://instagram.com/zero.eden" target="_blank" aria-label="Instagram">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-    </a>
-    <a class="cp-social" href="https://linkedin.com/in/medusan" target="_blank" aria-label="LinkedIn">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.２ 0 ２２．２２２ 0h．００３z"/></svg>
-    </a>
-    <a class="cp-social" href="https://www.facebook.com/MarvelousSun/" target="_blank" aria-label="Facebook">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-    </a>
-    <a class="cp-social" href="https://dribbble.com/0-eden" target="_blank" aria-label="Dribbble">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 24C5.385 24 0 18.615 0 12S5.385 0 12 0s12 5.385 12 12-5.385 12-12 12zm10.12-10.358c-.35-.11-3.17-.953-6.384-.438 1.34 3.684 1.887 6.684 1.992 7.308 2.3-1.555 3.936-4.02 4.395-6.87zm-6.115 7.808c-.153-.9-.75-4.032-2.19-7.77l-.066.02c-5.79 2.015-7.86 6.025-8.04 6.4 1.73 1.358 3.92 2.166 6.29 2.166 1.42 0 2.77-.29 4-.814zm-11.62-2.logout c.19-.38 2.86-5.385 8.04-7.07.165-.05.33-.1.495-.14-.31-.705-.645-1.41-1.005-2.1C5.97 8.55 2.005 8.625 1.645 8.625c-.04 0-.07 0-.11-.002-.015.13-.015 1.91-.015 2.42 0 2.16.655 4.164 1.77 5.822l.01-.016zM1.82 6.55c.37.005 3.785-.11 9.315-1.965C9.66 2.675 8.005 1.065 7.64.75 4.91 1.94 2.835 3.995 1.82 6.55zm7.585-6.08c.38.33 2.07 1.94 3.525 4.47 3.35-1.255 4.77-3.17 4.93-3.405C16.14.87 14.17.1 12 .1c-.895 0-1.755.13-2.595.37zm9.335 3.08c-.195.27-1.76 2.3-5.245 3.73.22.45.43.91.625 1.37.07.17.14.33.205.5 3.395-.43 6.77.26 7.11.33-.02-2.17-.69-4.18-1.695-5.93z"/></svg>
-    </a>
-    <a class="cp-social" href="https://www.behance.net/zeroeden" target="_blank" aria-label="Behance">
-      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029H23.726zm-7.726-3h3.585c-.185-1.096-1.037-1.96-1.77-1.96-.98 0-1.608.817-1.815 1.96zM8 13.5c1.381 0 2.5-1.119 2.5-2.5S9.381 8.5 8 8.5H3v10h5.5c1.657 0 3-1.343 3-3 0-1.38-.93-2.544-2.2-2.9L8 13.5zm-3-3.5h2.5c.828 0 1.5.672 1.5 1.5S8.328 13 7.5 13H5v-3zm0 5h3c.828 0 1.5.672 1.5 1.5S8.828 17 8 17H5v-2z"/></svg>
-    </a>
-  </div>
-
-  <!-- INFO ROW -->
-  <div class="cp-info">
-    <div class="cp-info-item">
-      <div class="cp-info-icon">
-        <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.01 2.18 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14z"/></svg>
+      <!-- SOCIALS -->
+      <div class="cp-socials">
+        <a class="cp-social" href="https://instagram.com/zero.eden" target="_blank" aria-label="Instagram">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z" />
+          </svg>
+        </a>
+        <a class="cp-social" href="https://linkedin.com/in/medusan" target="_blank" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.２ 0 ２２．２２２ 0h．００３z" />
+          </svg>
+        </a>
+        <a class="cp-social" href="https://www.facebook.com/MarvelousSun/" target="_blank" aria-label="Facebook">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z" />
+          </svg>
+        </a>
+        <a class="cp-social" href="https://dribbble.com/0-eden" target="_blank" aria-label="Dribbble">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M12 24C5.385 24 0 18.615 0 12S5.385 0 12 0s12 5.385 12 12-5.385 12-12 12zm10.12-10.358c-.35-.11-3.17-.953-6.384-.438 1.34 3.684 1.887 6.684 1.992 7.308 2.3-1.555 3.936-4.02 4.395-6.87zm-6.115 7.808c-.153-.9-.75-4.032-2.19-7.77l-.066.02c-5.79 2.015-7.86 6.025-8.04 6.4 1.73 1.358 3.92 2.166 6.29 2.166 1.42 0 2.77-.29 4-.814zm-11.62-2.logout c.19-.38 2.86-5.385 8.04-7.07.165-.05.33-.1.495-.14-.31-.705-.645-1.41-1.005-2.1C5.97 8.55 2.005 8.625 1.645 8.625c-.04 0-.07 0-.11-.002-.015.13-.015 1.91-.015 2.42 0 2.16.655 4.164 1.77 5.822l.01-.016zM1.82 6.55c.37.005 3.785-.11 9.315-1.965C9.66 2.675 8.005 1.065 7.64.75 4.91 1.94 2.835 3.995 1.82 6.55zm7.585-6.08c.38.33 2.07 1.94 3.525 4.47 3.35-1.255 4.77-3.17 4.93-3.405C16.14.87 14.17.1 12 .1c-.895 0-1.755.13-2.595.37zm9.335 3.08c-.195.27-1.76 2.3-5.245 3.73.22.45.43.91.625 1.37.07.17.14.33.205.5 3.395-.43 6.77.26 7.11.33-.02-2.17-.69-4.18-1.695-5.93z" />
+          </svg>
+        </a>
+        <a class="cp-social" href="https://www.behance.net/zeroeden" target="_blank" aria-label="Behance">
+          <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path
+              d="M22 7h-7V5h7v2zm1.726 10c-.442 1.297-2.029 3-5.101 3-3.074 0-5.564-1.729-5.564-5.675 0-3.91 2.325-5.92 5.466-5.92 3.082 0 4.964 1.782 5.375 4.426.078.506.109 1.188.095 2.14H15.97c.13 3.211 3.483 3.312 4.588 2.029H23.726zm-7.726-3h3.585c-.185-1.096-1.037-1.96-1.77-1.96-.98 0-1.608.817-1.815 1.96zM8 13.5c1.381 0 2.5-1.119 2.5-2.5S9.381 8.5 8 8.5H3v10h5.5c1.657 0 3-1.343 3-3 0-1.38-.93-2.544-2.2-2.9L8 13.5zm-3-3.5h2.5c.828 0 1.5.672 1.5 1.5S8.328 13 7.5 13H5v-3zm0 5h3c.828 0 1.5.672 1.5 1.5S8.828 17 8 17H5v-2z" />
+          </svg>
+        </a>
       </div>
-      <div>
-        <div class="cp-info-label">Phone</div>
-        <div class="cp-info-val">562-209-3874</div>
+
+      <!-- INFO ROW -->
+      <div class="cp-info">
+        <div class="cp-info-item">
+          <div class="cp-info-icon">
+            <svg viewBox="0 0 24 24">
+              <path
+                d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.07 10.8 19.79 19.79 0 01.01 2.18 2 2 0 012 0h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L6.09 7.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7A2 2 0 0122 14z" />
+            </svg>
+          </div>
+          <div>
+            <div class="cp-info-label">Phone</div>
+            <div class="cp-info-val">562-209-3874</div>
+          </div>
+        </div>
+        <div class="cp-info-item">
+          <div class="cp-info-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+              <polyline points="22,6 12,13 2,6" />
+            </svg>
+          </div>
+          <div>
+            <div class="cp-info-label">Email</div>
+            <div class="cp-info-val">grayquickart@gmail.com</div>
+          </div>
+        </div>
+        <div class="cp-info-item">
+          <div class="cp-info-icon">
+            <svg viewBox="0 0 24 24">
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+          </div>
+          <div>
+            <div class="cp-info-label">Location</div>
+            <div class="cp-info-val">Las Vegas, NV</div>
+          </div>
+        </div>
       </div>
+
+      <!-- FORM -->
+      <!-- To activate: sign up at formspree.io, create a form, and replace YOUR_FORM_ID below -->
+      <form class="cp-form" action="https://formspree.io/f/xnjopjzn" method="POST" id="contact-form">
+        <div class="cp-field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required>
+        </div>
+        <div class="cp-field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required>
+        </div>
+        <div class="cp-field cp-form-full">
+          <label for="phone">Phone</label>
+          <input type="tel" id="phone" name="phone" placeholder="(000) 000-0000">
+        </div>
+        <div class="cp-field cp-form-full">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" placeholder="Tell me about your project..." required></textarea>
+        </div>
+        <div class="cp-submit">
+          <button type="submit">Send Message ↗</button>
+        </div>
+        <div class="cp-success" id="form-success">Message sent — I'll be in touch soon.</div>
+      </form>
+
     </div>
-    <div class="cp-info-item">
-      <div class="cp-info-icon">
-        <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
-      </div>
-      <div>
-        <div class="cp-info-label">Email</div>
-        <div class="cp-info-val">grayquickart@gmail.com</div>
-      </div>
-    </div>
-    <div class="cp-info-item">
-      <div class="cp-info-icon">
-        <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-      </div>
-      <div>
-        <div class="cp-info-label">Location</div>
-        <div class="cp-info-val">Las Vegas, NV</div>
-      </div>
-    </div>
-  </div>
+  </div><!-- /scroll-wrap -->
 
-  <!-- FORM -->
-  <!-- To activate: sign up at formspree.io, create a form, and replace YOUR_FORM_ID below -->
-  <form class="cp-form" action="https://formspree.io/f/xnjopjzn" method="POST" id="contact-form">
-    <div class="cp-field">
-      <label for="name">Name</label>
-      <input type="text" id="name" name="name" placeholder="Your name" required>
-    </div>
-    <div class="cp-field">
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" placeholder="your@email.com" required>
-    </div>
-    <div class="cp-field cp-form-full">
-      <label for="phone">Phone</label>
-      <input type="tel" id="phone" name="phone" placeholder="(000) 000-0000">
-    </div>
-    <div class="cp-field cp-form-full">
-      <label for="message">Message</label>
-      <textarea id="message" name="message" placeholder="Tell me about your project..." required></textarea>
-    </div>
-    <div class="cp-submit">
-      <button type="submit">Send Message ↗</button>
-    </div>
-    <div class="cp-success" id="form-success">Message sent — I'll be in touch soon.</div>
-  </form>
+  <script>
+    (function () {
+      'use strict';
 
-</div>
-</div><!-- /scroll-wrap -->
+      var lerp = function (a, b, t) { return a + (b - a) * t; };
 
-<script>
-(function() {
-'use strict';
+      /* ── CURSOR ── */
+      var cur = document.getElementById('cur');
+      var ring = document.getElementById('cur-ring');
+      var mx = 0, my = 0, rx = 0, ry = 0;
 
-var lerp = function(a,b,t){ return a+(b-a)*t; };
+      document.addEventListener('mousemove', function (e) {
+        mx = e.clientX; my = e.clientY;
+        cur.style.transform = 'translate3d(' + (mx - 4) + 'px,' + (my - 4) + 'px,0)';
+      });
 
-/* ── CURSOR ── */
-var cur = document.getElementById('cur');
-var ring = document.getElementById('cur-ring');
-var mx = 0, my = 0, rx = 0, ry = 0;
+      (function ringTick() {
+        rx = lerp(rx, mx, 0.18);
+        ry = lerp(ry, my, 0.18);
+        ring.style.transform = 'translate3d(' + (rx - 20) + 'px,' + (ry - 20) + 'px,0)';
+        requestAnimationFrame(ringTick);
+      })();
 
-document.addEventListener('mousemove', function(e) {
-  mx = e.clientX; my = e.clientY;
-  cur.style.left = mx + 'px';
-  cur.style.top  = my + 'px';
-});
+      document.querySelectorAll('a, button').forEach(function (el) {
+        el.addEventListener('mouseenter', function () { cur.classList.add('big'); });
+        el.addEventListener('mouseleave', function () { cur.classList.remove('big'); });
+      });
 
-setInterval(function() {
-  rx = lerp(rx, mx, 0.1);
-  ry = lerp(ry, my, 0.1);
-  ring.style.left = rx + 'px';
-  ring.style.top  = ry + 'px';
-}, 14);
+      /* ── NAV SCROLL BLUR ── */
+      var nav = document.querySelector('nav');
+      window.addEventListener('scroll', function () {
+        nav.classList.toggle('scrolled', window.scrollY > 20);
+      }, { passive: true });
 
-document.querySelectorAll('a, button').forEach(function(el) {
-  el.addEventListener('mouseenter', function() { cur.classList.add('big'); });
-  el.addEventListener('mouseleave', function() { cur.classList.remove('big'); });
-});
+      /* ── FORM SUBMISSION ── */
+      var form = document.getElementById('contact-form');
+      form.addEventListener('submit', function (e) {
+        var action = form.getAttribute('action');
+        if (action.indexOf('YOUR_FORM_ID') !== -1) {
+          e.preventDefault();
+          document.getElementById('form-success').style.display = 'block';
+          form.reset();
+          return;
+        }
+        e.preventDefault();
+        var data = new FormData(form);
+        fetch(action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
+          .then(function (r) {
+            if (r.ok) {
+              document.getElementById('form-success').style.display = 'block';
+              form.reset();
+            }
+          });
+      });
 
-/* ── NAV SCROLL BLUR ── */
-var nav = document.querySelector('nav');
-window.addEventListener('scroll', function() {
-  nav.classList.toggle('scrolled', window.scrollY > 20);
-}, { passive: true });
+    })();
 
-/* ── FORM SUBMISSION ── */
-var form = document.getElementById('contact-form');
-form.addEventListener('submit', function(e) {
-  var action = form.getAttribute('action');
-  if (action.indexOf('YOUR_FORM_ID') !== -1) {
-    e.preventDefault();
-    document.getElementById('form-success').style.display = 'block';
-    form.reset();
-    return;
-  }
-  e.preventDefault();
-  var data = new FormData(form);
-  fetch(action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
-    .then(function(r) {
-      if (r.ok) {
-        document.getElementById('form-success').style.display = 'block';
-        form.reset();
+    /* ── BINARY ARTIFACTS ── */
+    if (window.innerWidth > 900) (function () {
+      var canvas = document.createElement('canvas');
+      canvas.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1';
+      document.body.appendChild(canvas);
+      var ctx = canvas.getContext('2d');
+
+      var W, H, particles = [];
+      var mouse = { x: -999, y: -999 };
+      var CHARS = ['0', '1'];
+      var COUNT = 80;
+      var REPEL_RADIUS = 120;
+      var REPEL_FORCE = 3.5;
+
+      function resize() {
+        W = canvas.width = window.innerWidth;
+        H = canvas.height = window.innerHeight;
+        ctx.font = 'bold 13px "DM Mono", monospace';
       }
-    });
-});
 
-})();
+      function rand(min, max) { return min + Math.random() * (max - min); }
 
-/* ── BINARY ARTIFACTS ── */
-(function() {
-  var canvas = document.createElement('canvas');
-  canvas.style.cssText = 'position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:1';
-  document.body.appendChild(canvas);
-  var ctx = canvas.getContext('2d');
+      function Particle() { this.reset(true); }
+      Particle.prototype.reset = function (anywhere) {
+        this.x = rand(0, W);
+        this.y = anywhere ? rand(0, H) : H + 10;
+        this.vx = rand(-0.15, 0.15);
+        this.vy = rand(-0.4, -0.15);
+        this.ox = this.x;
+        this.oy = this.y;
+        this.char = CHARS[Math.floor(Math.random() * CHARS.length)];
+        this.size = rand(10, 15);
+        this.alpha = rand(0.04, 0.12);
+        this.life = 0;
+        this.maxLife = rand(180, 400);
+      };
 
-  var W, H, particles = [];
-  var mouse = { x: -999, y: -999 };
-  var CHARS = ['0','1'];
-  var COUNT = 80;
-  var REPEL_RADIUS = 120;
-  var REPEL_FORCE  = 3.5;
+      for (var i = 0; i < COUNT; i++) particles.push(new Particle());
 
-  function resize() {
-    W = canvas.width  = window.innerWidth;
-    H = canvas.height = window.innerHeight;
-    ctx.font = 'bold 13px "DM Mono", monospace';
-  }
+      document.addEventListener('mousemove', function (e) {
+        mouse.x = e.clientX; mouse.y = e.clientY;
+      });
 
-  function rand(min, max) { return min + Math.random() * (max - min); }
-
-  function Particle() { this.reset(true); }
-  Particle.prototype.reset = function(anywhere) {
-    this.x  = rand(0, W);
-    this.y  = anywhere ? rand(0, H) : H + 10;
-    this.vx = rand(-0.15, 0.15);
-    this.vy = rand(-0.4, -0.15);
-    this.ox = this.x;
-    this.oy = this.y;
-    this.char    = CHARS[Math.floor(Math.random() * CHARS.length)];
-    this.size    = rand(10, 15);
-    this.alpha   = rand(0.04, 0.12);
-    this.life    = 0;
-    this.maxLife = rand(180, 400);
-  };
-
-  for (var i = 0; i < COUNT; i++) particles.push(new Particle());
-
-  document.addEventListener('mousemove', function(e) {
-    mouse.x = e.clientX; mouse.y = e.clientY;
-  });
-
-  function tick() {
-    ctx.clearRect(0, 0, W, H);
-    for (var i = 0; i < particles.length; i++) {
-      var p = particles[i];
-      p.life++;
-      var dx = p.x - mouse.x, dy = p.y - mouse.y;
-      var dist = Math.sqrt(dx * dx + dy * dy);
-      if (dist < REPEL_RADIUS && dist > 0) {
-        var force = (REPEL_RADIUS - dist) / REPEL_RADIUS * REPEL_FORCE;
-        p.x += (dx / dist) * force;
-        p.y += (dy / dist) * force;
-      } else {
-        p.x += (p.ox - p.x) * 0.02 + p.vx;
-        p.y += (p.oy - p.y) * 0.02 + p.vy;
-        p.oy += p.vy;
+      function tick() {
+        ctx.clearRect(0, 0, W, H);
+        for (var i = 0; i < particles.length; i++) {
+          var p = particles[i];
+          p.life++;
+          var dx = p.x - mouse.x, dy = p.y - mouse.y;
+          var dist = Math.sqrt(dx * dx + dy * dy);
+          if (dist < REPEL_RADIUS && dist > 0) {
+            var force = (REPEL_RADIUS - dist) / REPEL_RADIUS * REPEL_FORCE;
+            p.x += (dx / dist) * force;
+            p.y += (dy / dist) * force;
+          } else {
+            p.x += (p.ox - p.x) * 0.02 + p.vx;
+            p.y += (p.oy - p.y) * 0.02 + p.vy;
+            p.oy += p.vy;
+          }
+          var progress = p.life / p.maxLife;
+          var fade = progress < 0.1 ? progress / 0.1 : progress > 0.8 ? (1 - progress) / 0.2 : 1;
+          ctx.globalAlpha = p.alpha * fade;
+          ctx.fillStyle = '#ffffff';
+          ctx.fillText(p.char, p.x, p.y);
+          if (p.life >= p.maxLife || p.y < -20) p.reset(false);
+        }
+        requestAnimationFrame(tick);
       }
-      var progress = p.life / p.maxLife;
-      var fade = progress < 0.1 ? progress / 0.1 : progress > 0.8 ? (1 - progress) / 0.2 : 1;
-      ctx.globalAlpha = p.alpha * fade;
-      ctx.fillStyle = '#ffffff';
-      ctx.fillText(p.char, p.x, p.y);
-      if (p.life >= p.maxLife || p.y < -20) p.reset(false);
-    }
-    requestAnimationFrame(tick);
-  }
 
-  window.addEventListener('resize', resize);
-  resize();
-  tick();
-})();
-</script>
+      window.addEventListener('resize', resize);
+      resize();
+      tick();
+    })();
+    // end desktop-only binary artifacts
+  </script>
 </body>
+
 </html>
