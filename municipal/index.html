@@ -8,6 +8,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Mono:wght@300;400;500&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&display=swap" rel="stylesheet">
+  <script async src="https://t.contentsquare.net/uxa/74665bc162051.js"></script>
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-331PKQEN64"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-331PKQEN64');
+  </script>
   <link rel="stylesheet" href="/styles.css">
   <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
   <style>
@@ -423,12 +431,25 @@
     lbImg.src = item.querySelector('img').src;
     lbTit.textContent = item.dataset.title;
     lb.classList.remove('hidden');
+    gtag('event', 'lightbox_open', { content_type: 'portfolio_image', title: item.dataset.title });
   });
 
   function close() { lb.classList.add('hidden'); lbImg.src = ''; }
   document.getElementById('lb-close').addEventListener('click', close);
   document.getElementById('lb-backdrop').addEventListener('click', close);
   document.addEventListener('keydown', function(e) { if (e.key === 'Escape') close(); });
+
+  document.querySelectorAll('.site-card').forEach(function(card) {
+    card.addEventListener('click', function() {
+      gtag('event', 'site_card_click', { site_name: card.querySelector('.site-card-name').textContent, url: card.href });
+    });
+  });
+
+  document.querySelectorAll('.muni-btn').forEach(function(btn) {
+    btn.addEventListener('click', function() {
+      gtag('event', 'nav_click', { link: btn.textContent.trim(), page: 'municipal' });
+    });
+  });
 })();
 </script>
 

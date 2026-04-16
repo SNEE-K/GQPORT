@@ -401,12 +401,21 @@
         nav.classList.toggle('scrolled', window.scrollY > 20);
       }, { passive: true });
 
+      /* ── SOCIAL LINK TRACKING ── */
+      document.querySelectorAll('.cp-social').forEach(function (el) {
+        el.addEventListener('click', function () {
+          gtag('event', 'social_click', { platform: el.getAttribute('aria-label'), url: el.href });
+        });
+      });
+
       /* ── FORM SUBMISSION ── */
       var form = document.getElementById('contact-form');
       form.addEventListener('submit', function (e) {
+        gtag('event', 'form_submit', { form_id: 'contact' });
         var action = form.getAttribute('action');
         if (action.indexOf('YOUR_FORM_ID') !== -1) {
           e.preventDefault();
+          gtag('event', 'form_submit_success', { form_id: 'contact' });
           document.getElementById('form-success').style.display = 'block';
           form.reset();
           return;
@@ -416,6 +425,7 @@
         fetch(action, { method: 'POST', body: data, headers: { 'Accept': 'application/json' } })
           .then(function (r) {
             if (r.ok) {
+              gtag('event', 'form_submit_success', { form_id: 'contact' });
               document.getElementById('form-success').style.display = 'block';
               form.reset();
             }
