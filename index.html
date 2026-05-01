@@ -209,6 +209,13 @@
             <div class="w-tags"><span class="w-tag">Brand Identity</span><span class="w-tag">Studio</span></div>
             <div class="w-year">2025</div>
           </div>
+          <div class="work-row" data-case="moth3r" data-cat="ux-ui"
+            data-img="assets/images/ux-ui/moth3r/moth3r-cover.webp">
+            <div class="w-num">14</div>
+            <div class="w-title">MOTH3R</div>
+            <div class="w-tags"><span class="w-tag">Desktop App Design</span><span class="w-tag">UX / UI</span></div>
+            <div class="w-year">2026</div>
+          </div>
         </div>
 
         <!-- MOTION GALLERY -->
@@ -838,6 +845,59 @@
           galleries: [{ c: 'g1 narrow', imgs: ['assets/images/posters/bahaus_posterDesign.webp', 'assets/images/posters/ladyGaga.webp'] }, { c: 'g2', imgs: ['assets/images/posters/japanese_arthaus.webp', 'assets/images/posters/wednesday_netflix_promotional.webp'] }, { c: 'g3', imgs: ['assets/images/posters/front.webp', 'assets/images/posters/Bday_grayce.webp', 'assets/images/posters/devotio.webp'] }],
           impact: 'Poster work spanning concert promotion, editorial, and conceptual print. Each piece built to production-ready standards across both digital and physical formats.',
           next: 'smartplate', nextT: 'SmartPlate APP'
+        },
+        'moth3r': {
+          cat: 'Desktop App Design / Product Design / UX', title: 'MOTH3R',
+          meta: [{ l: 'Role', v: 'Designer & Developer' }, { l: 'Type', v: 'Personal Project' }, { l: 'Year', v: '2026' }, { l: 'Platform', v: 'macOS Desktop (Electron + React)' }],
+          hero: 'assets/images/ux-ui/moth3r/moth3r-cover.webp',
+          intro: [
+            "Running a design studio means living across a dozen disconnected tools — Google Analytics in one tab, Gmail in another, Instagram and LinkedIn in separate apps, lead prospecting through manual searches, and client outreach scattered across email threads. The cognitive cost of context-switching was eating into the time I should have been spending on actual creative work.",
+            "MOTH3R is the answer I built for myself: a personal command center for macOS that consolidates analytics, social media management, lead generation, email, AI chat, and deployment operations into a single, purpose-built desktop interface. Not another SaaS dashboard. A tool built around my actual workflow — designed and shipped in 30 days, solo."
+          ],
+          tags: ['Product Design', 'UX / UI', 'Design Systems', 'Desktop App', 'Electron', 'React', 'Information Architecture', 'End-to-End Development'],
+          stats: [
+            { n: '8+', l: 'Services Unified' },
+            { n: '6', l: 'Core Panels' },
+            { n: '30', l: 'Days to Ship' },
+            { n: '1', l: 'Designer' }
+          ],
+          galleries: [
+            { c: 'g1', imgs: ['assets/images/ux-ui/moth3r/dashboard.webp'] },
+            { c: 'g2', imgs: ['assets/images/ux-ui/moth3r/leadgen.webp', 'assets/images/ux-ui/moth3r/social.webp'] }
+          ],
+          features: [
+            { icon: '◈', h: 'Analytics Dashboard', p: 'Real-time GA4 data with traffic trends, top pages, and session metrics. Designed for daily scans — not deep analysis. Big numbers, contextual labels, time-relative indicators.' },
+            { icon: '◎', h: 'Lead Generation Pipeline', p: 'Automated business discovery via Google Places. AI-powered lead scoring, email enrichment, Notion CRM sync, and one-click AI-drafted outreach. A full pipeline with a clean interface.' },
+            { icon: '▣', h: 'Social Media Hub', p: 'Unified publishing to Instagram, Facebook, LinkedIn, and TikTok from a single compose interface. Platform toggles, content type tabs, character count with validation — constrained and focused.' },
+            { icon: '◻', h: 'Inbox & Email', p: 'Gmail integration with thread view, labels, starring, and archiving. A triage interface — scan and act. Not a full email client replacement, but a focused version of what daily email management actually is.' },
+            { icon: '◆', h: 'AI Chat (OpenClaw)', p: 'Built-in Claude AI with context-aware routing. Understands the full app state — can draft outreach emails, analyze lead data, or answer questions about connected services.' },
+            { icon: '◇', h: 'Deploy & Operations', p: 'Netlify site management, GitHub repo overview, one-click deploys. Slack notifications for pipeline completions and daily automated lead scans.' }
+          ],
+          body: [
+            "The core design challenge wasn't visual — it was information architecture. Six fundamentally different tools need to coexist without bleeding into each other. The solution is a strict panel model: each module owns its own state, its own layout conventions, and its own interaction patterns. The sidebar navigation is the only shared surface.",
+            "The dashboard is the hardest panel to get right because it has to surface disparate data sources at a glance. The hierarchy is absolute: site status (deploy state, build health) reads first, analytics metrics read second, repo activity reads third. Every card is designed to communicate its primary value without requiring a tap or click — you should be able to assess system health in three seconds.",
+            "Lead generation was the most design-intensive module. It exposes a multi-stage process — scrape, score, enrich, draft, send — that could easily become overwhelming. The solution is a tabbed architecture: Pipeline for running active scans, CRM for reviewing and acting on results. Inline scoring badges use color-coded thresholds (green 60+, orange 35–59, muted below) so you can prioritize prospects without reading the numbers.",
+            "The social compose interface required the most constraint. Instagram, Facebook, LinkedIn, and TikTok each have different character limits, different media requirements, different content performance norms. The design hides that complexity behind platform toggle icons at the top — one compose field, intelligent validation per platform, a single publish action. The UI reflects what posting actually is: write once, adapt and send.",
+            "The design system is built around technical clarity. Monospace type for all data values signals machine-generated information. The dark base (#0C0D10) with 2–3% lightness steps creates clear surface hierarchy without color noise. The accent — rebranded from the original blue to match the portfolio's red (#FF5035) — is used sparingly: active states, primary actions, headline numbers. Nothing else gets that treatment."
+          ],
+          timeline: [
+            { phase: 'Week 1', h: 'Architecture & Design System', p: 'Mapped the daily tool-switching workflow and identified the highest-friction touchpoints. Established the panel architecture, component library, dark-first theme, typography scale, and color system. Wireframed all six core panels before touching production code.' },
+            { phase: 'Week 2', h: 'Core UI & Service Integration', p: 'Built the sidebar navigation, dashboard, settings panels, and inbox. Integrated Google OAuth, GitHub, and Netlify APIs. Designed the analytics panel with live GA4 data and Gmail thread rendering with proper conversation grouping.' },
+            { phase: 'Week 3', h: 'Social & Lead Gen Modules', p: 'The most design-intensive phase. Social publish flow iterated 3x before the platform-toggle model landed right. Lead gen pipeline required multiple passes on information density — the scoring visualization, Notion CRM sync table, and draft preview modal each went through at least two rounds of simplification.' },
+            { phase: 'Week 4', h: 'Polish, Automation & Packaging', p: 'Slack bot notifications, scheduled pipeline automation, onboarding flow, light/dark theme system, and branding refinements across all panels. Packaged as a production macOS .dmg with custom app icon and drag-to-install experience.' }
+          ],
+          tech: [
+            { h: 'Frontend', p: 'React 19, Zustand for state management, Vite build system. CSS custom properties for full theme flexibility. No component library — all UI built from scratch.' },
+            { h: 'Desktop Shell', p: 'Electron with a secure IPC bridge. Preload script exposes a sandboxed API surface. electron-builder for .dmg packaging with custom app icon.' },
+            { h: 'Integrations', p: 'Google OAuth 2.0, GA4 Data API, Gmail, Notion, GitHub, Netlify, Slack, Instagram, Facebook, LinkedIn, TikTok, Claude AI. 12+ live API connections, all direct REST — no SDKs.' }
+          ],
+          outcomes: [
+            { n: '8', l: 'Tools Consolidated' },
+            { n: '~2hrs', l: 'Daily Time Saved' },
+            { n: '100%', l: 'Shipped to Production' }
+          ],
+          impact: 'Designed, built, and shipped solo in 30 days. A production macOS application consolidating 8+ services into a single interface — live and in daily use. Demonstrates end-to-end product thinking: problem definition, system architecture, UI design, and production delivery.',
+          next: 'tix4-ux', nextT: 'TIX4 UX REDESIGN'
         }
       };
 
@@ -875,6 +935,26 @@
         var bH = d.body.map(function (p) { return '<p>' + p + '</p>'; }).join('');
         var titleH = d.title.split('\n').join('<br>');
 
+        var statsH = d.stats ? '<div class="cs-stats-grid">' + d.stats.map(function (s) {
+          return '<div class="cs-stat"><div class="cs-stat-num">' + s.n + '</div><div class="cs-stat-lbl">' + s.l + '</div></div>';
+        }).join('') + '</div>' : '';
+
+        var featH = d.features ? '<div class="cs-sect"><div class="cs-sect-h">FEATURES</div><div class="cs-features">' + d.features.map(function (f) {
+          return '<div class="cs-feature"><div class="cs-feature-icon">' + f.icon + '</div><h3 class="cs-feature-h">' + f.h + '</h3><p>' + f.p + '</p></div>';
+        }).join('') + '</div></div>' : '';
+
+        var timelineH = d.timeline ? '<div class="cs-sect"><div class="cs-sect-h">TIMELINE</div><div class="cs-timeline">' + d.timeline.map(function (t) {
+          return '<div class="cs-tl-item"><div class="cs-tl-phase">' + t.phase + '</div><h3 class="cs-tl-h">' + t.h + '</h3><p>' + t.p + '</p></div>';
+        }).join('') + '</div></div>' : '';
+
+        var techH = d.tech ? '<div class="cs-sect"><div class="cs-sect-h">TECH STACK</div><div class="cs-stack-grid">' + d.tech.map(function (t) {
+          return '<div class="cs-stack-item"><h4>' + t.h + '</h4><p>' + t.p + '</p></div>';
+        }).join('') + '</div></div>' : '';
+
+        var outcomesH = d.outcomes ? '<div class="cs-sect"><div class="cs-sect-h">OUTCOMES</div><div class="cs-outcomes">' + d.outcomes.map(function (o) {
+          return '<div class="cs-outcome"><div class="cs-outcome-num">' + o.n + '</div><div class="cs-outcome-lbl">' + o.l + '</div></div>';
+        }).join('') + '</div></div>' : '';
+
         document.getElementById('cs-content').innerHTML =
           '<div class="cs-hero-sec">' +
           '<div class="cs-cat">' + d.cat + '</div>' +
@@ -887,9 +967,14 @@
           '<div class="cs-ov-lbl">Overview</div>' +
           '<div class="cs-ov-txt">' + iH + '<div class="cs-tags">' + tH + '</div></div>' +
           '</div>' +
+          statsH +
           gH +
+          featH +
           '<div class="cs-sect"><div class="cs-sect-h">PROCESS</div><div class="cs-sect-p">' + bH + '</div></div>' +
+          timelineH +
           vH +
+          techH +
+          outcomesH +
           '<div class="cs-impact"><div class="cs-impact-lbl">Impact</div><div class="cs-impact-txt">' + d.impact + '</div></div>' +
           '</div>' +
           '<div class="cs-next">' +

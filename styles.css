@@ -1427,6 +1427,168 @@ nav.scrolled {
   color: var(--accent)
 }
 
+/* ── CASE STUDY: RICH SECTIONS ── */
+.cs-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 2px;
+  margin: 48px 0;
+  background: var(--border)
+}
+
+.cs-stat {
+  background: var(--bg);
+  padding: 32px 24px;
+  text-align: center
+}
+
+.cs-stat-num {
+  font-family: var(--disp);
+  font-size: 56px;
+  letter-spacing: .03em;
+  color: var(--accent);
+  line-height: 1
+}
+
+.cs-stat-lbl {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--dim);
+  margin-top: 8px
+}
+
+.cs-features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: var(--border);
+  margin-top: 12px
+}
+
+.cs-feature {
+  background: var(--bg);
+  padding: 28px 24px
+}
+
+.cs-feature-icon {
+  font-size: 20px;
+  margin-bottom: 14px
+}
+
+.cs-feature-h {
+  font-family: var(--body);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 8px;
+  letter-spacing: 0
+}
+
+.cs-feature p {
+  font-size: 13px;
+  line-height: 1.65;
+  color: #888
+}
+
+.cs-timeline {
+  margin-top: 12px;
+  border-left: 1px solid var(--border);
+  padding-left: 32px
+}
+
+.cs-tl-item {
+  padding: 24px 0;
+  border-bottom: 1px solid var(--border)
+}
+
+.cs-tl-item:last-child {
+  border-bottom: none
+}
+
+.cs-tl-phase {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 8px
+}
+
+.cs-tl-h {
+  font-family: var(--body);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text);
+  margin-bottom: 8px
+}
+
+.cs-tl-item p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: #888
+}
+
+.cs-stack-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: var(--border);
+  margin-top: 12px
+}
+
+.cs-stack-item {
+  background: var(--bg);
+  padding: 28px 24px
+}
+
+.cs-stack-item h4 {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: 10px
+}
+
+.cs-stack-item p {
+  font-size: 13px;
+  line-height: 1.65;
+  color: #888
+}
+
+.cs-outcomes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: var(--border);
+  margin-top: 12px
+}
+
+.cs-outcome {
+  background: var(--bg);
+  padding: 36px 24px;
+  text-align: center
+}
+
+.cs-outcome-num {
+  font-family: var(--disp);
+  font-size: 56px;
+  letter-spacing: .03em;
+  color: var(--accent);
+  line-height: 1
+}
+
+.cs-outcome-lbl {
+  font-family: var(--mono);
+  font-size: 9px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: var(--dim);
+  margin-top: 8px
+}
+
 /* ── REVEAL ── */
 .reveal {
   opacity: 0;
@@ -1521,6 +1683,16 @@ nav.scrolled {
   .cs-next {
     padding-left: 20px;
     padding-right: 20px
+  }
+
+  .cs-stats-grid {
+    grid-template-columns: repeat(2, 1fr)
+  }
+
+  .cs-features,
+  .cs-stack-grid,
+  .cs-outcomes {
+    grid-template-columns: 1fr
   }
 
   .hero-bottom {
