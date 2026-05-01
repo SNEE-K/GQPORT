@@ -210,7 +210,7 @@
             <div class="w-year">2025</div>
           </div>
           <div class="work-row" data-case="moth3r" data-cat="ux-ui"
-            data-img="assets/images/ux-ui/moth3r/moth3r-cover.webp">
+            data-img="assets/images/ux-ui/moth3r/moth3r_app_thumb.png">
             <div class="w-num">14</div>
             <div class="w-title">MOTH3R</div>
             <div class="w-tags"><span class="w-tag">Desktop App Design</span><span class="w-tag">UX / UI</span></div>
@@ -849,7 +849,7 @@
         'moth3r': {
           cat: 'Desktop App Design / Product Design / UX', title: 'MOTH3R',
           meta: [{ l: 'Role', v: 'Designer & Developer' }, { l: 'Type', v: 'Personal Project' }, { l: 'Year', v: '2026' }, { l: 'Platform', v: 'macOS Desktop (Electron + React)' }],
-          hero: 'assets/images/ux-ui/moth3r/moth3r-cover.webp',
+          hero: 'assets/images/ux-ui/moth3r/moth3r_app_thumb.png',
           intro: [
             "Running a design studio means living across a dozen disconnected tools — Google Analytics in one tab, Gmail in another, Instagram and LinkedIn in separate apps, lead prospecting through manual searches, and client outreach scattered across email threads. The cognitive cost of context-switching was eating into the time I should have been spending on actual creative work.",
             "MOTH3R is the answer I built for myself: a personal command center for macOS that consolidates analytics, social media management, lead generation, email, AI chat, and deployment operations into a single, purpose-built desktop interface. Not another SaaS dashboard. A tool built around my actual workflow — designed and shipped in 30 days, solo."
@@ -861,9 +861,11 @@
             { n: '30', l: 'Days to Ship' },
             { n: '1', l: 'Designer' }
           ],
-          galleries: [
-            { c: 'g1', imgs: ['assets/images/ux-ui/moth3r/dashboard.webp'] },
-            { c: 'g2', imgs: ['assets/images/ux-ui/moth3r/leadgen.webp', 'assets/images/ux-ui/moth3r/social.webp'] }
+          galleries: [],
+          mockups: [
+            { img: 'assets/images/ux-ui/moth3r/moth3r-dashboard.png', lbl: 'Dashboard — Netlify sites, GitHub repos, deploy status, GA4 metrics' },
+            { img: 'assets/images/ux-ui/moth3r/moth3r-leadgen.png', lbl: 'Lead Gen — Notion CRM view with AI scoring and outreach status' },
+            { img: 'assets/images/ux-ui/moth3r/moth3r-social.png', lbl: 'Social — Cross-platform compose with 4 connected accounts' }
           ],
           features: [
             { icon: '◈', h: 'Analytics Dashboard', p: 'Real-time GA4 data with traffic trends, top pages, and session metrics. Designed for daily scans — not deep analysis. Big numbers, contextual labels, time-relative indicators.' },
@@ -939,6 +941,16 @@
           return '<div class="cs-stat"><div class="cs-stat-num">' + s.n + '</div><div class="cs-stat-lbl">' + s.l + '</div></div>';
         }).join('') + '</div>' : '';
 
+        var mockupsH = (d.mockups && d.mockups.length) ? '<div class="cs-sect"><div class="cs-sect-h">THE PRODUCT</div>' + d.mockups.map(function (m) {
+          return '<div class="cs-mockup-wrap">' +
+            '<div class="cs-mockup">' +
+            '<div class="cs-mockup-bar"><div class="cs-mockup-dot"></div><div class="cs-mockup-dot"></div><div class="cs-mockup-dot"></div></div>' +
+            '<div class="cs-mockup-screen"><img src="' + m.img + '" alt="" loading="lazy" style="width:100%;border-radius:8px;display:block"></div>' +
+            '</div>' +
+            '<div class="cs-mockup-lbl">' + m.lbl + '</div>' +
+            '</div>';
+        }).join('') + '</div>' : '';
+
         var featH = d.features ? '<div class="cs-sect"><div class="cs-sect-h">FEATURES</div><div class="cs-features">' + d.features.map(function (f) {
           return '<div class="cs-feature"><div class="cs-feature-icon">' + f.icon + '</div><h3 class="cs-feature-h">' + f.h + '</h3><p>' + f.p + '</p></div>';
         }).join('') + '</div></div>' : '';
@@ -968,6 +980,7 @@
           '<div class="cs-ov-txt">' + iH + '<div class="cs-tags">' + tH + '</div></div>' +
           '</div>' +
           statsH +
+          mockupsH +
           gH +
           featH +
           '<div class="cs-sect"><div class="cs-sect-h">PROCESS</div><div class="cs-sect-p">' + bH + '</div></div>' +
